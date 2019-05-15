@@ -1,0 +1,51 @@
+html {
+	font-size: calc(14px + 6 * ((100vw - 320px) / 1200));
+  height: 100%;
+}
+
+body {
+	margin: 0;
+  padding: 0;
+  color: $color-text;
+  background: $color-background;
+
+  font-family: $sans-serif;
+  line-height: 1.5;
+  text-align: center;
+
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (max-width: 700px) {
+    padding: 0;
+  }
+}
+
+section {
+  position: relative;
+  padding: 0 1rem;
+  margin-bottom: 6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+p {
+  max-width: 30rem;
+  margin: 0 auto 1.5rem;
+  text-align: left;
+}
+
+a {
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+  font-weight: 400;
+  &:hover {
+    text-decoration: none;
+  }
+}
