@@ -6,6 +6,9 @@
 
 <style lang="scss" scoped>
 .logo {
-  color: yellow;
+  color: white;
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
 }
 </style>

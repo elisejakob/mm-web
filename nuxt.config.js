@@ -40,6 +40,39 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    'vue-scrollto/nuxt',
+    '@nuxtjs/apollo',
+    '@nuxtjs/proxy'
+  ],
+
+  apollo: {
+    // tokenName: 'apollo-token',
+    includeNodeModules: true,
+    // authenticationType: 'Bearer',
+    defaultOptions: {
+      $query: {
+        loadingKey: 'loading',
+        fetchPolicy: 'cache-and-network',
+      },
+    },
+    //errorHandler: '~/plugins/apollo-error-handler.js',
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:3000/api',
+        //httpEndpoint: 'https://mm-admin.jakobsenfrukt.no/api',
+        wsEndpoint: null,
+        // getAuth: () => 'Bearer 8PtFtE3G5i1Mk5eIClv4PWKLsrNPMYlOj15-Gr4uZ5OPUBCwqTj0oeb3erwYueJU'
+        httpLinkOptions: {
+          headers: {
+            'Authorization': 'Bearer 8PtFtE3G5i1Mk5eIClv4PWKLsrNPMYlOj15-Gr4uZ5OPUBCwqTj0oeb3erwYueJU'
+          }
+        }
+      }
+    }
+  },
+
+  proxy: [
+    [ 'https://mm-admin.jakobsenfrukt.no/api', { ws: false } ]
   ],
 
   /*

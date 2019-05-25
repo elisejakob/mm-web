@@ -1,0 +1,48 @@
+<template>
+  <div class="newsletter">
+    <h3>{{ heading }}</h3>
+    <label>Sign up to our newsletter</label>
+    <input type="text" placeholder="your email here :)" />
+    <button>Sign up</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Newsletter',
+  props: {
+    heading: String
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '@/assets/css/variables.scss';
+.newsletter {
+  width: 100%;
+  max-width: $width-m;
+  margin: 2rem auto;
+  background: $color-black;
+  color: $color-white;
+  padding: 1rem;
+
+  label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    font-size: 1rem;
+    width: 100%;
+    padding: 1rem;
+    line-height: 1rem;
+    outline: none;
+    margin-bottom: 0.5rem;
+    &:focus, &:hover, &:active {
+      border: 2px solid $color-theme-light;
+    }
+  }
+}
+</style>
