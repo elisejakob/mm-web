@@ -1,8 +1,6 @@
 <template>
   <main class="site-main">
     <Hero />
-    <h2>{{ home.title }}</h2>
-    <p>{{ home.test }}</p>
     <Concerts />
     <Music />
     <Videos />
@@ -20,8 +18,6 @@ import Videos from '~/components/sections/Videos.vue'
 import About from '~/components/sections/About.vue'
 import Shop from '~/components/sections/Shop.vue'
 import Contact from '~/components/sections/Contact.vue'
-
-import gql from 'graphql-tag'
 
 export default {
   components: {
@@ -44,17 +40,6 @@ export default {
           content: 'Marcus & Martinus is currently the biggest pop act in the Nordic region. Get the latest updates here. News, pictures, concerts, etc.. @marcusandmartinus.' }
       ]
     }
-  },
-  apollo: {
-    home: gql`
-    query {
-      home: entry(title: "Home") {
-        ... on Home {
-          title
-          test
-        }
-      }
-    }`,
   }
 }
 </script>

@@ -4,11 +4,11 @@
     <div class="concert-wrapper">
       <h2 class="section-title">Concerts</h2>
       <ul class="concert-list">
-        <li class="concert-list-item">
-          <div class="date">7. juni</div>
+        <li class="concert-list-item" v-for="(concert, index) in concerts" :key="index">
+          <div class="date">{{ concert.date }}</div>
           <div class="location">
-            <span class="city">Copenhagen</span>
-            <span class="venue">Telenor Arena</span>
+            <span class="city">{{ concert.city }}, {{ concert.country }}</span>
+            <span class="venue">{{ concert.venue }}</span>
           </div>
           <a href="#" class="button tickets">Get tickets</a>
         </li>
@@ -19,11 +19,26 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import Newsletter from '~/components/Newsletter.vue'
 
 export default {
   components: {
     Newsletter
+  },
+  apollo: {
+    concerts: gql`
+    query {
+      concerts: entries(section:concerts) {
+    		... on Concerts {
+          date @date(as:"F j")
+          city
+          country
+          venue
+          ticketUrl
+        }
+      }
+    }`
   }
 }
 </script>
@@ -59,6 +74,10 @@ export default {
       align-items: center;
       background: $color-white;
       color: $color-black;
+      margin-bottom: 0.5rem;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     .city {

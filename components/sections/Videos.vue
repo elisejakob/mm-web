@@ -13,7 +13,6 @@
 .videos {
   width: 100%;
   max-width: $width-m;
-  margin: 0 auto;
   padding: 0 0 4rem;
 }
 </style>
