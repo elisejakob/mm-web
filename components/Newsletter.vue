@@ -1,9 +1,9 @@
 <template>
   <div class="newsletter">
     <h3>{{ heading }}</h3>
-    <label>Sign up to our newsletter</label>
-    <input type="text" placeholder="your email here :)" />
-    <button>Sign up</button>
+    <!--<label>Sign up to our newsletter</label>-->
+    <input type="text" placeholder="😀 your email here 😀" />
+    <button class="gradient">Sign up to our newsletter</button>
   </div>
 </template>
 
@@ -22,14 +22,18 @@ export default {
   width: 100%;
   max-width: $width-m;
   margin: 2rem auto;
-  background: $color-black;
-  color: $color-white;
   padding: 1rem;
+
+  h3 {
+    text-transform: none;
+    letter-spacing: normal;
+    max-width: $width-s;
+    margin: 0 auto 1rem;
+  }
 
   label {
     display: block;
     font-size: 1rem;
-    font-weight: 800;
     margin-bottom: 0.5rem;
   }
 

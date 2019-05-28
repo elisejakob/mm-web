@@ -1,6 +1,7 @@
 <template>
   <section id="about" class="about">
     <h2 class="section-title">Our story</h2>
+    <img :src="about.mainImage[0].url" class="section-image" />
     <p class="lead">Marcus&amp;Martinus is the biggest pop phenomenon coming from Scandinavia in years. Only 17 years old, the twins from Norway have already established themselves as successful artists in large parts of Europe. Their catchy pop music and magnetic stage presence is impossible not to like, which their ever growing fan base of MMers all over the world agrees on!</p>
     <p>Their third album «Moments» is out now – and on their first ever European tour, «Moments Tour» they are playing for sold out venues in a total of 14 different countries.</p>
     <div class="both" id="both">
@@ -14,7 +15,7 @@
     
     <div class="split">
       <div class="half" id="marcus">
-        <img src="http://marcusandmartinus.com/wp-content/uploads/2018/03/img_4646.jpg" />
+        <img src="https://mm.jakobsenfrukt.no/assets/marcus-1.jpg" />
         <div class="m-info">
           <h3 class="name">Marcus</h3>
           <div class="read-more" @click="readMore('marcus')">Facts about Marcus</div>
@@ -35,7 +36,7 @@
         </div>
       </div>
       <div class="half" id="martinus">
-        <img src="http://marcusandmartinus.com/wp-content/uploads/2018/03/img_4646-1.jpg" />
+        <img src="https://mm.jakobsenfrukt.no/assets/martinus-1.jpg" />
         <div class="m-info">
           <h3 class="name">Martinus</h3>
           <div class="read-more" @click="readMore('martinus')">Facts about Martinus</div>
@@ -60,8 +61,28 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
+
 export default {
   name: 'About',
+  apollo: {
+    about: gql`
+    query {
+      about: entry(title: "About") {
+        ... on About {
+          mainImage {
+            url
+          }
+          marcusPortrait {
+            url
+          }
+          martinusPortrait {
+            url
+          }
+        }
+      }
+    }`
+  },
   methods: {
     readMore: function(name) {
       document.getElementById(name).classList.toggle('visible')
@@ -74,7 +95,15 @@ export default {
 @import '@/assets/css/variables.scss';
 .about {
   padding: 0;
-  margin-bottom: 15rem;
+  margin-bottom: 10rem;
+
+  .section-image {
+    margin: 1rem auto 2rem;
+  }
+
+  @media (max-width: $media-s) {
+    margin-bottom: 3rem;
+  }
 }
 .name {
   font-size: 5rem;
@@ -99,33 +128,30 @@ export default {
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
+  flex-wrap: wrap;
   width: 100%;
 }
 .half {
   width: 50%;
   text-align: right;
   position: relative;
-  padding: 0 2rem 0 1rem;
+  padding: 0 10% 0 1rem;
   .m-info {
     position: absolute;
     z-index: 3;
     top: 90%;
     left: auto;
     right: 0;
-    max-width: 90%;
+    width: 90%;
   }
   &:first-of-type {
     text-align: left;
-    padding: 0 1rem 0 2rem;
+    padding: 0 1rem 0 10%;
 
     .m-info {
       right: auto;
       left: 0;
     }
-  }
-  img {
-    width: 100%;
-    margin: 0 auto;
   }
   .read-more {
     background: $color-white;
@@ -161,10 +187,7 @@ export default {
 
   &:after {
     content: "▼▼";
-    display: inline-block;
-    margin-left: 0.5rem;
-    font-size: 0.8rem;
-    vertical-align: middle;
+    float: right;
   }
 
   &:hover {
@@ -185,14 +208,38 @@ export default {
 }
 
 .both {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 
   .read-more {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
-    text-decoration: underline;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid $color-white;
     &:hover {
       color: $color-theme-light;
+      border-color: $color-theme-light;
+    }
+  }
+
+  &.visible {
+    .read-more {
+      color: $color-theme-light;
+      border-color: $color-theme-light;
+    }
+  }
+}
+
+@media (max-width: $media-s) {
+  .half {
+    width: 100%;
+    margin-bottom: 5rem;
+    padding: 2rem;
+
+    &:first-of-type {
+      padding: 2rem;
+    }
+
+    &.visible {
+      margin-bottom: 30rem;
     }
   }
 }

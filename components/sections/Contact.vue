@@ -1,7 +1,7 @@
 <template>
   <section id="contact" class="contact">
     <h2 class="section-title">Contact</h2>
-    <p>We love hearing from you! Send fandmail to:</p>
+    <p>We love hearing from you! Send fanmail to:</p>
     <p class="address">
       M&amp;M<br />
       Sony Music Norway<br />
@@ -16,6 +16,7 @@
 .contact {
   p {
     margin-bottom: 0;
+    text-align: center;
   }
   .address {
     margin: 2rem auto;
@@ -24,6 +25,7 @@
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: bold;
+    text-align: left;
     line-height: 1.3;
     background: $color-theme-light;
     color: $color-black;

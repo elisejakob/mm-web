@@ -1,34 +1,36 @@
 <template>
   <div class="menu-banner">
     <marquee-text
-      :duration="20"
+      :duration="30"
       :paused="isPaused"
+      class="site-menu"
     >
-      <nav class="site-menu">
-        <a href="#">Concerts</a>
-        <a href="#">Music</a>
-        <a href="#">About</a>
-        <a href="#">Shop</a>
-        <a href="#">Contact</a>
-        <a href="#" target="_blank">Facebook</a>
-        <a href="#" target="_blank">Twitter</a>
-        <a href="https://www.youtube.com/channel/UCRUmSbfoolI9b8iRyrGqFUw" target="_blank">Youtube</a>
-        <a href="https://www.instagram.com/marcusandmartinus/" target="_blank">Instagram</a>
-        <a href="#" target="_blank">Spotify</a>
-        <a href="http://vm.tiktok.com/dH7p8e/" target="_blank">Tiktok</a>
-        <a href="https://giphy.com/MarcusandMartinus" target="_blank">Giphy</a>
-      </nav>
+      <Logo symbol />
+      <a href="#">Concerts</a>
+      <a href="#">Music</a>
+      <a href="#">About</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+      <a href="https://www.facebook.com/marcusandmartinus" target="_blank">Facebook</a>
+      <a href="https://twitter.com/marcusmartinus" target="_blank">Twitter</a>
+      <a href="https://www.youtube.com/channel/UCRUmSbfoolI9b8iRyrGqFUw" target="_blank">Youtube</a>
+      <a href="https://www.instagram.com/marcusandmartinus/" target="_blank">Instagram</a>
+      <a href="#" target="_blank">Spotify</a>
+      <a href="http://vm.tiktok.com/dH7p8e/" target="_blank">Tiktok</a>
+      <a href="https://giphy.com/MarcusandMartinus" target="_blank">Giphy</a>
     </marquee-text>
   </div>
 </template>
 
 <script>
 import MarqueeText from '~/components/MarqueeText.vue'
+import Logo from '~/components/Logo.vue'
 
 export default {
   layout: 'single',
   components: {
-    MarqueeText
+    MarqueeText,
+    Logo
   },
   data: function() {
     return {
@@ -47,8 +49,9 @@ export default {
   right: 0;
   z-index: 1000;
   background: black;
-  padding: 0;
+  padding: 0.5rem 0 0.3rem;
   overflow: hidden;
+  line-height: 1;
 }
 .site-menu {
   a {

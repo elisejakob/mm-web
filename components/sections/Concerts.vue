@@ -1,6 +1,6 @@
 <template>
   <section id="concerts" class="concerts">
-    <img src="http://marcusandmartinus.com/wp-content/uploads/2018/09/background.jpg" />
+    <img src="https://mm.jakobsenfrukt.no/assets/concerts.jpg" class="section-image" />
     <div class="concert-wrapper">
       <h2 class="section-title">Concerts</h2>
       <ul class="concert-list">
@@ -48,7 +48,7 @@ export default {
 .concert-wrapper {
   width: 100%;
   max-width: $width-m;
-  margin: -2rem auto 2rem;
+  margin: -10rem auto 5rem;
   padding: 0;
   position: relative;
   z-index: 100;

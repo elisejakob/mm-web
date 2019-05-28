@@ -11,7 +11,7 @@
   right: 0;
   left: 0;
   top: 50%;
-  background: linear-gradient(90deg, purple, orange);
+  background: linear-gradient(90deg, $color-theme-light, $color-theme-light-2);
 
   &:after {
     content: "";

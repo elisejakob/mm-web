@@ -1,25 +1,48 @@
 <template>
-  <footer class="site-footer">
-    <a href="#" class="to-top">
-      <div class="icon">🚀</div>
-      To top
-    </a>
-    <nav class="footer-nav">
-      <a href="https://www.mmstore.com/pages/privacy-policy">Cookies</a>
-      <nuxt-link to="/contact">Contact our team</nuxt-link>
-      <a href="https://jakobsenfrukt.no" class="credit">Website by JF&amp;G</a>
-    </nav>
-  </footer>
+  <div>
+    <Gradient />
+    <nuxt />
+    <footer class="site-footer">
+      <nav class="footer-nav">
+        <a href="https://www.mmstore.com/pages/privacy-policy">Cookies</a>
+        <a href="https://jakobsenfrukt.no" class="credit">Website by JF&amp;G</a>
+      </nav>
+    </footer>
+  </div>
 </template>
+
+<script>
+import Gradient from '~/components/Gradient.vue'
+
+export default {
+  layout: 'countdown',
+  components: {
+    Gradient
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
+a.index {
+  display: block;
+  text-align: left;
+  opacity: 0.5;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-style: italic;
+  text-transform: uppercase;
+
+  &:hover {
+    opacity: 1;
+  }
+}
 .site-footer {
-  background: black;
   width: 100%;
-  margin-top: 10rem;
   padding: 3rem 1rem 1rem;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  font-size: $font-s;
 }
 .to-top {
   display: block;
@@ -44,7 +67,6 @@
     margin: 0 1rem;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: $font-s;
     font-weight: 700;
     font-style: italic;
     letter-spacing: 0.05em;

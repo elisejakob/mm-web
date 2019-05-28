@@ -39,11 +39,12 @@
 @import '@/assets/css/variables.scss';
 .shop-list {
   display: flex;
+  flex-wrap: wrap;
   max-width: $width-l;
   margin: 0 auto;
 }
 .shop-item {
-  width: $width-xs;
+  width: 25%;
   display: block;
   padding: 1rem;
   text-decoration: none;
@@ -66,5 +67,11 @@
   width: $width-s;
   max-width: 100%;
   margin: 0 auto;
+}
+
+@media (max-width: $media-s) {
+  .shop-item {
+    width: 50%;
+  }
 }
 </style>

@@ -1,14 +1,20 @@
 <template>
   <section id="hero" class="hero">
-    <!--<div class="video-wrapper">
-      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gRWRgFdhT-8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>-->
     <div class="hero-media">
-      <div class="logo"></div>
-      <template>
+      <div class="column">
+        <Logo />
+      </div>
+      <template v-if="home.youtube">
+        <div class="video-wrapper">
+          <iframe width="560" height="315" :src="`https://www.youtube-nocookie.com/embed/${home.youtube.split('=').pop()}?autoplay=1?controls=0`" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+        </div>
+      </template>
+      <template v-else>
         <img :src="home.mainImage[0].url" />
       </template>
-      <div class="logo"></div>
+      <div class="column">
+        <Logo />
+      </div>
     </div>
     <div class="hero-label" id="hero-more">
       <div class="hero-text">
@@ -27,18 +33,22 @@
 
 <script>
 import gql from 'graphql-tag'
+import Logo from '~/components/Logo.vue'
 
 export default {
   name: 'Hero',
+  components: {
+    Logo
+  },
   apollo: {
     home: gql`
     query {
       home: entry(title: "Home") {
         ... on Home {
-          title
           mainImage {
             url
           }
+          youtube
         }
       }
     }`
@@ -54,22 +64,29 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
 .hero {
-  width: 100%;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding-top: 0;
   text-align: left;
 
   &-media {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    .logo {
+    .column {
       width: 10%;
       height: 3rem;
-      background: red;
+      margin-top: 3.6rem;
+      padding: 0 0 0 1rem;
+      &:first-of-type {
+        padding: 0 1rem 0 0;
+        opacity: 0;
+      }
     }
-    img {
+    img, .video-wrapper {
       width: 80%;
+    }
+    .video-wrapper {
+      margin-top: 3.6rem;
     }
   }
 
@@ -101,10 +118,6 @@ export default {
       text-align: right;
     }
   }
-}
-.video-wrapper {
-  width: 100%;
-  max-width: $width-l;
 }
 .read-more {
   cursor: pointer;
