@@ -1,16 +1,18 @@
 <template>
-  <div>
+  <div id="top">
     <Gradient />
     <nuxt-link to="/" class="index">&#11013; &nbsp;Return to front page</nuxt-link>
     <nuxt />
     <footer class="site-footer">
-      <a href="#" class="to-top">
-        <div class="icon">🚀</div>
+      <scroll-link href="#top" class="to-top">
+        <div class="icon">
+          <img src="/images/rocket.png" alt="Rocket emoji" />
+        </div>
         To top
-      </a>
+      </scroll-link>
       <nav class="footer-nav">
         <a href="https://www.mmstore.com/pages/privacy-policy">Cookies</a>
-        <a href="https://jakobsenfrukt.no" class="credit">Website by JF&amp;G</a>
+        <a href="https://jakobsenfrukt.no" target="_blank" class="credit">Website by JF&amp;G</a>
       </nav>
     </footer>
   </div>
@@ -18,11 +20,13 @@
 
 <script>
 import Gradient from '~/components/Gradient.vue'
+import ScrollLink from '~/components/ScrollLink.vue'
 
 export default {
   layout: 'single',
   components: {
-    Gradient
+    Gradient,
+    ScrollLink
   }
 }
 </script>
@@ -55,13 +59,12 @@ a.index {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.05em;
-  margin-bottom: 3rem;
+  margin: 5rem auto;
 
   .icon {
-    font-size: 3rem;
+    display: block;
     width: 3rem;
     margin: 0 auto;
-    transform: rotate(-43deg);
   }
 }
 .footer-nav {
