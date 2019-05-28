@@ -1,7 +1,10 @@
 <template>
   <footer class="site-footer">
+    <Newsletter heading="Stay in touch!" />
     <scroll-link href="#hero" class="to-top">
-      <div class="icon">🚀</div>
+      <div class="icon">
+        <img src="/images/rocket.png" alt="Rocket emoji" />
+      </div>
       To top
     </scroll-link>
     <nav class="footer-nav">
@@ -14,10 +17,12 @@
 
 <script>
 import ScrollLink from '~/components/ScrollLink.vue'
+import Newsletter from '~/components/Newsletter.vue'
 
 export default {
   components: {
-    ScrollLink
+    ScrollLink,
+    Newsletter
   }
 }
 </script>
@@ -30,6 +35,7 @@ export default {
   margin-top: 10rem;
   padding: 3rem 1rem 1rem;
   position: relative;
+  z-index: 1001;
 }
 .to-top {
   display: block;
@@ -37,13 +43,12 @@ export default {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.05em;
-  margin-bottom: 3rem;
+  margin: 5rem auto;
 
   .icon {
-    font-size: 3rem;
+    display: block;
     width: 3rem;
     margin: 0 auto;
-    transform: rotate(-43deg);
   }
 }
 .footer-nav {

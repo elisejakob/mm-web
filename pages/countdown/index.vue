@@ -58,7 +58,7 @@ export default {
     }
   },
   created() {
-    this.date = new Date("June 7, 2019 12:00:00").getTime();
+    this.date = new Date("June 7, 2019 00:00:00 GMT+02:00").getTime();
     this.count();
     setInterval(this.count, 1000);
   },
