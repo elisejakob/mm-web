@@ -5,12 +5,12 @@
       :paused="isPaused"
       class="site-menu"
     >
-      <Logo symbol />
-      <a href="#">Concerts</a>
-      <a href="#">Music</a>
-      <a href="#">About</a>
-      <a href="#">Shop</a>
-      <a href="#">Contact</a>
+      <scroll-link href="#hero" class="logo"><Logo symbol /></scroll-link>
+      <scroll-link href="#concerts">Concerts</scroll-link>
+      <scroll-link href="#music">Music</scroll-link>
+      <scroll-link href="#about">About</scroll-link>
+      <scroll-link href="#shop">Shop</scroll-link>
+      <scroll-link href="#contact">Contact</scroll-link>
       <a href="https://www.facebook.com/marcusandmartinus" target="_blank">Facebook</a>
       <a href="https://twitter.com/marcusmartinus" target="_blank">Twitter</a>
       <a href="https://www.youtube.com/channel/UCRUmSbfoolI9b8iRyrGqFUw" target="_blank">Youtube</a>
@@ -24,12 +24,14 @@
 
 <script>
 import MarqueeText from '~/components/MarqueeText.vue'
+import ScrollLink from '~/components/ScrollLink.vue'
 import Logo from '~/components/Logo.vue'
 
 export default {
   layout: 'single',
   components: {
     MarqueeText,
+    ScrollLink,
     Logo
   },
   data: function() {
@@ -64,6 +66,19 @@ export default {
 
     &:hover {
       color: $color-theme-light;
+    }
+
+    &:focus {
+      color: $color-theme-light-2;
+      outline: none;
+    }
+
+    &.logo {
+      display: inline-block;
+      margin: 0 1rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      vertical-align: middle;
     }
   }
 }

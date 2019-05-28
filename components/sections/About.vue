@@ -1,7 +1,7 @@
 <template>
   <section id="about" class="about">
     <h2 class="section-title">Our story</h2>
-    <img :src="about.mainImage[0].url" class="section-image" />
+    <img :src="about.mainImage[0].url" class="section-image" alt="The boys in action" />
     <p class="lead">Marcus&amp;Martinus is the biggest pop phenomenon coming from Scandinavia in years. Only 17 years old, the twins from Norway have already established themselves as successful artists in large parts of Europe. Their catchy pop music and magnetic stage presence is impossible not to like, which their ever growing fan base of MMers all over the world agrees on!</p>
     <p>Their third album «Moments» is out now – and on their first ever European tour, «Moments Tour» they are playing for sold out venues in a total of 14 different countries.</p>
     <div class="both" id="both">
@@ -15,7 +15,7 @@
     
     <div class="split">
       <div class="half" id="marcus">
-        <img src="https://mm.jakobsenfrukt.no/assets/marcus-1.jpg" />
+        <img src="https://mm.jakobsenfrukt.no/assets/marcus-1.jpg" alt="Marcus looking cute" />
         <div class="m-info">
           <h3 class="name">Marcus</h3>
           <div class="read-more" @click="readMore('marcus')">Facts about Marcus</div>
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="half" id="martinus">
-        <img src="https://mm.jakobsenfrukt.no/assets/martinus-1.jpg" />
+        <img src="https://mm.jakobsenfrukt.no/assets/martinus-1.jpg" alt="Martinus looking cute" />
         <div class="m-info">
           <h3 class="name">Martinus</h3>
           <div class="read-more" @click="readMore('martinus')">Facts about Martinus</div>
@@ -94,7 +94,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
 .about {
-  padding: 0;
+  padding: 5rem 0 0;
   margin-bottom: 10rem;
 
   .section-image {

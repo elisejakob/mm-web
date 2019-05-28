@@ -1,9 +1,9 @@
 <template>
   <footer class="site-footer">
-    <a href="#" class="to-top">
+    <scroll-link href="#hero" class="to-top">
       <div class="icon">🚀</div>
       To top
-    </a>
+    </scroll-link>
     <nav class="footer-nav">
       <a href="https://www.mmstore.com/pages/privacy-policy">Cookies</a>
       <nuxt-link to="/contact">Contact our team</nuxt-link>
@@ -11,6 +11,16 @@
     </nav>
   </footer>
 </template>
+
+<script>
+import ScrollLink from '~/components/ScrollLink.vue'
+
+export default {
+  components: {
+    ScrollLink
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';

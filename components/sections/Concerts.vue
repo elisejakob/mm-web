@@ -1,6 +1,6 @@
 <template>
   <section id="concerts" class="concerts">
-    <img src="https://mm.jakobsenfrukt.no/assets/concerts.jpg" class="section-image" />
+    <img src="https://mm.jakobsenfrukt.no/assets/concerts.jpg" class="section-image" alt="A recent MM-concert" />
     <div class="concert-wrapper">
       <h2 class="section-title">Concerts</h2>
       <ul class="concert-list">

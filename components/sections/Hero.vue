@@ -10,7 +10,7 @@
         </div>
       </template>
       <template v-else>
-        <img :src="home.mainImage[0].url" />
+        <img :src="home.mainImage[0].url" alt="The latest MM release" />
       </template>
       <div class="column">
         <Logo />

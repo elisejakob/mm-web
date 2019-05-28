@@ -29,14 +29,6 @@ export default {
 
 .logo {
   width: 100%;
-
-  &.symbol {
-    display: inline-block;
-    margin: 0 1rem;
-    width: 1.8rem;
-    height: 1.8rem;
-    vertical-align: middle;
-  }
 }
 path {
   fill: $color-white;
