@@ -54,6 +54,10 @@ export default {
   padding: 0.5rem 0 0.3rem;
   overflow: hidden;
   line-height: 1;
+
+  @media (max-width: $media-s) {
+    top: 0.5rem;
+  }
 }
 .site-menu {
   a {

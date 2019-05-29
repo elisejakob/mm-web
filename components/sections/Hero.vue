@@ -118,6 +118,37 @@ export default {
       text-align: right;
     }
   }
+
+  @media (max-width: $media-s) {
+    &-media {
+      display: block;
+      img, .video-wrapper {
+        width: 100%;
+      }
+      .column {
+        display: none;
+        &:first-of-type {
+          display: block;
+          padding: 0 1rem;
+          opacity: 1;
+          width: 8rem;
+          height: auto;
+          margin: 3.5rem auto 1rem;
+        }
+      }
+    }
+    &-label {
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+    &-text {
+      justify-content: center;
+    }
+    .section-title {
+      font-size: 5rem;
+    }
+  }
 }
 .read-more {
   cursor: pointer;
@@ -148,6 +179,11 @@ export default {
   margin: 0;
   padding: 1rem;
   display: none;
+
+  @media (max-width: $media-s) {
+    text-align: center;
+    width: 100%;
+  }
 }
 .visible {
   .more {

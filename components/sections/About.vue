@@ -229,17 +229,24 @@ export default {
 }
 
 @media (max-width: $media-s) {
+  .about {
+    padding: 5rem 1rem 0;
+  }
   .half {
     width: 100%;
     margin-bottom: 5rem;
-    padding: 2rem;
+    padding: 0;
 
     &:first-of-type {
-      padding: 2rem;
+      padding: 0;
     }
 
     &.visible {
-      margin-bottom: 30rem;
+      margin-bottom: 40rem;
+    }
+
+    .m-info {
+      width: 100%;
     }
   }
 }

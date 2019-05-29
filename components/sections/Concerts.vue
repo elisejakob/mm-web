@@ -99,6 +99,51 @@ export default {
       font-weight: 800;
       line-height: inherit;
       width: auto;
+
+      &:hover {
+        color: inherit;
+        background: $color-theme-light-2;
+        border-color: $color-theme-light-2;
+      }
+    }
+  }
+
+  @media (max-width: $media-s) {
+    margin-top: 0;
+
+    .concert-list {
+      padding: 0.5rem;
+      line-height: 1.3;
+
+      &-item {
+        justify-content: flex-start;
+      }
+
+      div, a {
+        padding: 0.6rem;
+      }
+
+      .location {
+        text-align: left;
+      }
+
+      .city, .venue {
+        display: block;
+        &:after {
+          content: none;
+        }
+      }
+
+      .date {
+        width: 4rem;
+        text-align: left;
+      }
+
+      .tickets {
+        width: 7rem;
+        margin-left: auto;
+        align-self: stretch;
+      }
     }
   }
 }
