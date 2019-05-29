@@ -50,6 +50,10 @@ export default {
     width: 3rem;
     margin: 0 auto;
   }
+
+  &:hover {
+    color: $color-theme-light;
+  }
 }
 .footer-nav {
   display: flex;
