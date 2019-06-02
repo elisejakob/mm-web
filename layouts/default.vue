@@ -60,7 +60,6 @@ export default {
       const menu = document.querySelectorAll('.site-menu a');
       for (const menuItem of menu) {
         if (menuItem.getAttribute('href') === '#' + this.activeSection) {
-          console.log(this.activeSection);
           document.querySelector('.active').classList.remove('active');
           menuItem.classList.add('active');
         }

@@ -14,6 +14,8 @@
   max-width: 200px;
   z-index: 1000;
 
+  display: none;
+
   img {
     width: 100%;
     vertical-align: bottom;

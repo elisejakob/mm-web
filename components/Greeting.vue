@@ -35,5 +35,7 @@ export default {
   bottom: 0;
   left: 1rem;
   z-index: 1000;
+
+  display: none;
 }
 </style>

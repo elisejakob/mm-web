@@ -5,7 +5,7 @@
     <footer class="site-footer">
       <nav class="footer-nav">
         <a href="https://www.mmstore.com/pages/privacy-policy">Cookies</a>
-        <a href="https://jakobsenfrukt.no" class="credit">Website by JF&amp;G</a>
+        <a href="https://jakobsenfrukt.no" class="credit">Website by JF&amp;G 🥔</a>
       </nav>
     </footer>
   </div>

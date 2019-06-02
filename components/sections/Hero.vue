@@ -104,6 +104,20 @@ export default {
     background: $color-black;
     color: $color-white;
     padding: 0.5rem 1rem;
+
+    &:before {
+      content: "new music";
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: $color-theme-light;
+      text-shadow: 0.18em 0.16em 0 $color-black;
+      position: absolute;
+      top: -3rem;
+      left: 4rem;
+      transform: rotate(6deg);
+    }
   }
 
   &-text {
