@@ -2,6 +2,7 @@
   <main class="site-main">
     <Logo />
     <h1 class="section-title">Soon</h1>
+    <img src="/images/soon.jpg" />
     <div id="countdown" class="countdown">
       <div>
           <div id="days" class="countdown-number">{{ days }}</div>
@@ -72,15 +73,27 @@ export default {
 @import '@/assets/css/variables.scss';
 .site-main {
   position: relative;
+  min-height: 88vh;
 }
 .section-title {
   padding-top: 5rem;
   font-size: 10rem;
+  position: absolute;
+  text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
+}
+
+img {
+  display: block;
+  width: 70vh;
+  height: 70vh;
+  margin: 0 auto;
 }
 .countdown {
     display: flex;
     max-width: $width-m;
     margin: 0 auto;
+    position: absolute;
+    width: 100%;
 }
 .countdown div {
     flex: 1;

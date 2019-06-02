@@ -40,8 +40,7 @@ a.index {
 .site-footer {
   width: 100%;
   padding: 3rem 1rem 1rem;
-  position: absolute;
-  bottom: 0;
+  position: relative;
   font-size: $font-s;
 }
 .to-top {

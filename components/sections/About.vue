@@ -124,18 +124,7 @@ export default {
     font-size: 3rem;
   }
 }
-.split {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 100%;
-}
 .half {
-  width: 50%;
-  text-align: right;
-  position: relative;
-  padding: 0 10% 0 1rem;
   .m-info {
     position: absolute;
     z-index: 3;
@@ -145,9 +134,6 @@ export default {
     width: 90%;
   }
   &:first-of-type {
-    text-align: left;
-    padding: 0 1rem 0 10%;
-
     .m-info {
       right: auto;
       left: 0;
@@ -167,13 +153,17 @@ export default {
   ul {
     font-weight: 800;
     list-style: none;
-    margin: 1rem auto;
+    margin: 1rem 0;
     padding: 0;
     max-width: 30rem;
 
     a {
       font-weight: 800;
     }
+  }
+
+  p {
+    margin: 1rem 0;
   }
 }
 .more {
@@ -233,18 +223,9 @@ export default {
     padding: 5rem 1rem 0;
   }
   .half {
-    width: 100%;
-    margin-bottom: 5rem;
-    padding: 0;
-
-    &:first-of-type {
-      padding: 0;
-    }
-
     &.visible {
       margin-bottom: 40rem;
     }
-
     .m-info {
       width: 100%;
     }

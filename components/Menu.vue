@@ -5,9 +5,10 @@
       :paused="isPaused"
       class="site-menu"
     >
-      <scroll-link href="#hero" class="logo"><Logo symbol /></scroll-link>
+      <scroll-link href="#hero" class="logo active"><Logo symbol /></scroll-link>
       <scroll-link href="#concerts">Concerts</scroll-link>
       <scroll-link href="#music">Music</scroll-link>
+      <scroll-link href="#videos">Videos</scroll-link>
       <scroll-link href="#about">About</scroll-link>
       <scroll-link href="#shop">Shop</scroll-link>
       <scroll-link href="#contact">Contact</scroll-link>
@@ -68,12 +69,11 @@ export default {
     font-weight: 700;
     letter-spacing: 0.05em;
 
-    &:hover {
+    &:hover, &.active, &:focus {
       color: $color-theme-light;
     }
 
     &:focus {
-      color: $color-theme-light-2;
       outline: none;
     }
 
