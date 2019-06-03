@@ -141,15 +141,16 @@ img {
   font-size: 4rem;
   line-height: 1;
   color: $color-theme-light;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
 }
 
 .countdown-label {
   text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   margin-bottom: 0;
 }
 
