@@ -24,6 +24,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
+::-webkit-scrollbar { 
+  display: none; 
+}
 a.index {
   display: block;
   text-align: left;
@@ -67,8 +70,10 @@ a.index {
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 12px;
     font-style: italic;
     letter-spacing: 0.05em;
+    opacity: 0.5;
 
     &:hover {
       color: $color-theme-light;

@@ -1,34 +1,55 @@
 <template>
   <main class="site-main">
-    <Logo />
-    <h1 class="section-title">Soon</h1>
+    <marquee-text
+      :duration="30"
+      :paused="isPaused"
+      class="marquee"
+    >
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+      <span>Soon</span>
+    </marquee-text>
     <img src="/images/soon.jpg" />
-    <div id="countdown" class="countdown">
-      <div>
-          <div id="days" class="countdown-number">{{ days }}</div>
-          <div class="countdown-label">Days</div>
+    <div class="countdown-wrapper">
+      <div id="countdown" class="countdown">
+        <div class="countdown-item">
+            <div id="days" class="countdown-number">{{ days }}</div>
+            <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+            <div id="hours" class="countdown-number">{{ hours }}</div>
+            <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+            <div id="minutes" class="countdown-number">{{ minutes }}</div>
+            <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+            <div id="seconds" class="countdown-number">{{ seconds }}</div>
+            <div class="countdown-label">Seconds</div>
+        </div>
       </div>
-      <div>
-          <div id="hours" class="countdown-number">{{ hours }}</div>
-          <div class="countdown-label">Hours</div>
-      </div>
-      <div>
-          <div id="minutes" class="countdown-number">{{ minutes }}</div>
-          <div class="countdown-label">Minutes</div>
-      </div>
-      <div>
-          <div id="seconds" class="countdown-number">{{ seconds }}</div>
-          <div class="countdown-label">Seconds</div>
-      </div>
-  </div>
+    </div>
   </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
+import MarqueeText from '~/components/MarqueeText.vue'
 export default {
   layout: 'countdown',
+  components: {
+    MarqueeText
+  },
   head() {
     return {
       title: 'Marcus & Martinus'
@@ -40,7 +61,8 @@ export default {
       days: 0,
       hours: 0,
       minutes: 0,
-      seconds: 0
+      seconds: 0,
+      isPaused: false
     }
   },
   methods: {
@@ -73,46 +95,97 @@ export default {
 @import '@/assets/css/variables.scss';
 .site-main {
   position: relative;
-  min-height: 88vh;
+  height: 100vh;
 }
-.section-title {
-  padding-top: 5rem;
-  font-size: 10rem;
+img {
+  display: block;
+  width: 80vh;
+  height: 80vh;
+  margin: 0 auto;
+  position: relative;
+}
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: $width-m;
+  margin: 0 auto;
+  padding: 0.5rem;
   position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+}
+.countdown-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8), black);
+}
+.countdown-item {
+  flex: 1;
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:last-of-type {
+    padding: 0;
+    border: none;
+  }
+}
+.countdown-number {
+  font-size: 4rem;
+  line-height: 1;
+  color: $color-theme-light;
+  font-weight: 500;
+  text-transform: uppercase;
   text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.8);
 }
 
-img {
-  display: block;
-  width: 70vh;
-  height: 70vh;
-  margin: 0 auto;
-}
-.countdown {
-    display: flex;
-    max-width: $width-m;
-    margin: 0 auto;
-    position: absolute;
-    width: 100%;
-}
-.countdown div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-.countdown .countdown-number {
-    font-size: 6rem;
-    line-height: 1;
-    color: $color-theme-light;
-    font-weight: 300;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+.countdown-label {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0;
 }
 
-.countdown .countdown-label {
+.marquee {
+  a, span {
+    display: inline-block;
+    margin: 0 0.5rem;
+    text-decoration: none;
     text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 0;
+  }
+  margin-bottom: 1rem;
+}
+
+@media (max-width: $media-s) {
+  img {
+    width: 90%;
+    height: auto;
+    margin-top: 10vh;
+  }
+  .countdown {
+    bottom: auto;
+    top: 50%;
+  }
+  .countdown-number {
+    font-size: 2rem;
+  }
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+  .marquee {
+    a, span {
+      font-size: 1rem;
+    }
+  }
 }
 </style>

@@ -40,6 +40,11 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/google-tag-manager', { 
+      id: 'GTM-NZN36LJ',
+      pageTracking: true,
+      dev: false
+    }],
     'vue-scrollto/nuxt',
     '@nuxtjs/apollo',
     '@nuxtjs/proxy'
