@@ -66,7 +66,7 @@ export default {
   },
   head() {
     return {
-      title: 'Marcus & Martinus Contact'
+      title: 'Marcus & Martinus: Contact'
     }
   }
 }

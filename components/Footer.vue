@@ -10,7 +10,7 @@
     <nav class="footer-nav">
       <a href="https://www.mmstore.com/pages/privacy-policy">Cookies</a>
       <nuxt-link to="/contact">Contact our team</nuxt-link>
-      <a href="https://jakobsenfrukt.no" target="_blank" class="credit">Website by JF&amp;G 🥔</a>
+      <a href="https://jakobsenfrukt.no" target="_blank" class="credit">Website by JF&amp;G 🍌</a>
     </nav>
   </footer>
 </template>
@@ -63,7 +63,7 @@ export default {
     margin: 0 1rem;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: $font-s;
+    font-size: 12px;
     font-weight: 700;
     font-style: italic;
     letter-spacing: 0.05em;
@@ -74,6 +74,10 @@ export default {
 
     &.credit {
       margin-left: auto;
+    }
+
+    @media (max-width: $media-s) {
+      font-size: 10px;
     }
   }
 }

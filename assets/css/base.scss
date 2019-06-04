@@ -136,6 +136,7 @@ section {
   line-height: 1;
   margin: 1rem auto;
   text-transform: uppercase;
+  max-width: 80%;
 
   @media (max-width: $media-s) {
     font-size: 4rem;

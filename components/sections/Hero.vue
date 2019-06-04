@@ -17,6 +17,7 @@
       </div>
     </div>
     <div class="hero-label" id="hero-more">
+      <ShinyText class="before" text="New music" />
       <div class="hero-text">
         <h2 class="section-title">Soon</h2>
         <div class="info">
@@ -34,11 +35,13 @@
 <script>
 import gql from 'graphql-tag'
 import Logo from '~/components/Logo.vue'
+import ShinyText from '~/components/ShinyText.vue'
 
 export default {
   name: 'Hero',
   components: {
-    Logo
+    Logo,
+    ShinyText
   },
   apollo: {
     home: gql`
@@ -105,8 +108,7 @@ export default {
     color: $color-white;
     padding: 0.5rem 1rem;
 
-    &:before {
-      content: "new music";
+    .before {
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 900;

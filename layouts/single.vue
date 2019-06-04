@@ -3,30 +3,21 @@
     <Gradient />
     <nuxt-link to="/" class="index">&#11013; &nbsp;Return to front page</nuxt-link>
     <nuxt />
-    <footer class="site-footer">
-      <scroll-link href="#top" class="to-top">
-        <div class="icon">
-          <img src="/images/rocket.png" alt="Rocket emoji" />
-        </div>
-        To top
-      </scroll-link>
-      <nav class="footer-nav">
-        <a href="https://www.mmstore.com/pages/privacy-policy">Cookies</a>
-        <a href="https://jakobsenfrukt.no" target="_blank" class="credit">Website by JF&amp;G 🥔</a>
-      </nav>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Gradient from '~/components/Gradient.vue'
 import ScrollLink from '~/components/ScrollLink.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
   layout: 'single',
   components: {
     Gradient,
-    ScrollLink
+    ScrollLink,
+    Footer
   }
 }
 </script>

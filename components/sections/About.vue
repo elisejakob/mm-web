@@ -15,7 +15,7 @@
     
     <div class="split">
       <div class="half" id="marcus">
-        <img src="https://mm.jakobsenfrukt.no/assets/marcus-1.jpg" alt="Marcus looking cute" />
+        <img :src="about.marcusPortrait[0].url" alt="Marcus looking cute" />
         <div class="m-info">
           <h3 class="name">Marcus</h3>
           <div class="read-more" @click="readMore('marcus')">Facts about Marcus</div>
@@ -30,13 +30,13 @@
             <p>My favorite moments with our fans is always when we’re on stage, performing, and to see them smile and be happy because of us. That makes me extremely happy. When they sing along and go all crazy!</p>
             <p>My favorite moment of our career is the Voldsløkka-concert we had in Oslo, everything just felt so right from the beginning to the end and the crowd was amazing. And when we played in front of 70.000 people in Greece and the local police had to escort us out of the arena afterwards. That was pretty cool!</p>
             <ul class="social">
-              <li>Instagram: <a href="https://www.instagram.com/marcusgunnarsen/">@marcusgunnarsen</a></li>
+              <li>Instagram: <a href="https://www.instagram.com/marcusgunnarsen/" target="_blank">@marcusgunnarsen</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="half" id="martinus">
-        <img src="https://mm.jakobsenfrukt.no/assets/martinus-1.jpg" alt="Martinus looking cute" />
+        <img :src="about.martinusPortrait[0].url" alt="Martinus looking cute" />
         <div class="m-info">
           <h3 class="name">Martinus</h3>
           <div class="read-more" @click="readMore('martinus')">Facts about Martinus</div>
@@ -51,7 +51,7 @@
             <p>My favorite moments with our fans is always when we’re on stage, performing, and to see them smile and be happy because of us. That makes me extremely happy. When they sing along and go all crazy!</p>
             <p>My favorite moment of our career is the Voldsløkka-concert we had in Oslo, everything just felt so right from the beginning to the end and the crowd was amazing. And when we played in front of 70.000 people in Greece and the local police had to escort us out of the arena afterwards. That was pretty cool!</p>
             <ul class="social">
-              <li>Instagram: <a href="https://www.instagram.com/martinusgunnarsen/">@martinusgunnarsen</a></li>
+              <li>Instagram: <a href="https://www.instagram.com/martinusgunnarsen/" target="_blank">@martinusgunnarsen</a></li>
             </ul>
           </div>
         </div>

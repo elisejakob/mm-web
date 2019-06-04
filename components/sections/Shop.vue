@@ -31,7 +31,7 @@
         </div>
       </a>
     </div>
-    <a class="button glowy">Visit our shop</a>
+    <a href="https://www.mmstore.com/" class="button glowy" target="_blank">Visit our shop</a>
   </section>
 </template>
 
@@ -41,7 +41,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: $width-l;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 .shop-item {
   width: 25%;
@@ -60,6 +60,8 @@
 
   .price {
     text-align: center;
+
+    display: none;
   }
 }
 .button {

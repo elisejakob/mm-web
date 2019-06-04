@@ -59,6 +59,7 @@ export default {
     background: $color-white;
     color: $color-black;
     margin: 0 auto;
+    max-width: none;
   }
 
   .concert-list {

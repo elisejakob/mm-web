@@ -1,8 +1,32 @@
 <template>
-  <div class="gif">
-    <img src="https://media.giphy.com/media/fnvxYRJ2dUSN3q58ol/giphy.gif" />
+  <div class="gif" :class="{ visible: isVisible }">
+    <img :src="gif" />
   </div>
 </template>
+
+<script>
+export default {
+  data: function() {
+    return {
+      day: null,
+      isVisible: false
+    }
+  },
+  computed: {
+    gif: function() {
+      var gif = '/gifs/hi.gif';
+      if (this.day === 1) {
+        gif = '/gifs/birthday.gif';
+      }
+      return gif
+    }
+  },
+  created() {
+    this.day = new Date().getDay();
+    this.isVisible = true
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
@@ -15,6 +39,10 @@
   z-index: 1000;
 
   display: none;
+
+  &.visible {
+    display: block;
+  }
 
   img {
     width: 100%;

@@ -73,10 +73,16 @@ export default {
   }
 
   .privacy-info {
-    font-size: 14px;
+    font-size: 12px;
     margin: 0.5rem auto;
     text-align: center;
     opacity: 0.7;
+  }
+
+  @media (max-width: $media-s) {
+    .privacy-info {
+      font-size: 10px;
+    }
   }
 }
 </style>
