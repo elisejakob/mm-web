@@ -27,4 +27,7 @@
     margin: 1rem auto;
   }
 }
+.button {
+  margin: 2px 0;
+}
 </style>

@@ -112,11 +112,11 @@ export default {
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-weight: 900;
-      font-size: 1.3rem;
+      font-size: 1rem;
       color: $color-theme-light;
       text-shadow: 0.18em 0.16em 0 $color-black;
       position: absolute;
-      top: -3rem;
+      top: -2rem;
       left: 4rem;
       transform: rotate(6deg);
     }
@@ -157,6 +157,11 @@ export default {
       display: block;
       position: relative;
       width: 100%;
+
+      .before {
+        left: auto;
+        right: 0;
+      }
     }
     &-text {
       justify-content: center;
@@ -195,6 +200,7 @@ export default {
   margin: 0;
   padding: 1rem;
   display: none;
+  max-width: none;
 
   @media (max-width: $media-s) {
     text-align: center;

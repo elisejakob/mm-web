@@ -1,29 +1,37 @@
 <template>
   <div class="greeting">
-    {{ dailymessage }}
+    <JumpingText :text="message" :style="style" />
   </div>
 </template>
 
 <script>
+import JumpingText from '~/components/JumpingText.vue'
 export default {
+  components: {
+    JumpingText
+  },
   data: function() {
     return {
-      day: null
+      day: null,
+      message: 'MMers Friday',
+      style: null
     }
   },
-  computed: {
-    dailymessage: function() {
-      var message = 'yo';
-      if (this.day === 1) {
-        message = 'is britny bich'
-      } else if (this.day === 5) {
-        message = 'MMers Friday'
+  methods: {
+    updateMessage: function() {
+      if (this.day === 2) {
+        this.message = 'Hi there'
+      } else if (this.day === 3) {
+        this.message = 'MMers Friday';
+        this.style = {
+          color: 'rgb(255, 200, 220)'
+        }
       }
-      return message
     }
   },
   created() {
     this.day = new Date().getDay();
+    this.updateMessage();
   }
 }
 </script>
@@ -33,9 +41,13 @@ export default {
 .greeting {
   position: fixed;
   bottom: 0;
-  left: 1rem;
+  right: 1rem;
   z-index: 1000;
 
-  display: none;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: -0.05em 0.1em 0 $color-black, 0 0 0.2em rgba(0, 0, 0, 0.8);
 }
 </style>

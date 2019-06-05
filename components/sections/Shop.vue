@@ -2,36 +2,40 @@
   <section id="shop" class="shop">
     <h2 class="section-title">Shop</h2>
     <div class="shop-list">
-      <a href="#" class="shop-item">
-        <img src="https://cdn.shopify.com/s/files/1/1436/8724/products/mobilegreen.jpg?v=1540907157">
+      <a href="https://mmstore.com/collections/all-products3/products/hoodie-18-black" target="_blank" class="shop-item">
+        <img src="/images/shop/hoodieblack.jpg">
         <div class="shop-item-text">
-          <h3>Mobile Cover 18´ | Green</h3>
+          <h3>Hoodie 18'</h3>
+          <p class="details">Black</p>
           <p class="price">€15.00</p>
         </div>
       </a>
-      <a href="#" class="shop-item">
-        <img src="https://cdn.shopify.com/s/files/1/1436/8724/products/mobilegreen.jpg?v=1540907157">
+      <a href="https://mmstore.com/collections/all-products3/products/mobile-cover-18-yellow" target="_blank" class="shop-item">
+        <img src="/images/shop/mobileyellow.jpg">
         <div class="shop-item-text">
-          <h3>Mobile Cover 18´ | Green</h3>
+          <h3>Mobile Cover 18'</h3>
+          <p class="details">Yellow</p>
           <p class="price">€15.00</p>
         </div>
       </a>
-      <a href="#" class="shop-item">
-        <img src="https://cdn.shopify.com/s/files/1/1436/8724/products/mobilegreen.jpg?v=1540907157">
+      <a href="https://mmstore.com/collections/all-products3/products/tee-logo-grey" target="_blank" class="shop-item">
+        <img src="/images/shop/teegrey.jpg">
         <div class="shop-item-text">
-          <h3>Mobile Cover 18´ | Green</h3>
-          <p class="price">€15.00</p>
+          <h3>T-shirt 18'</h3>
+          <p class="details">Grey</p>
+          <p class="price">€29.90</p>
         </div>
       </a>
-      <a href="#" class="shop-item">
-        <img src="https://cdn.shopify.com/s/files/1/1436/8724/products/mobilegreen.jpg?v=1540907157">
+      <a href="https://mmstore.com/collections/all-products3/products/track-pants-grey-18" target="_blank" class="shop-item">
+        <img src="/images/shop/greypants.jpg">
         <div class="shop-item-text">
-          <h3>Mobile Cover 18´ | Green</h3>
-          <p class="price">€15.00</p>
+          <h3>Track pants 18'</h3>
+          <p class="details">Grey</p>
+          <p class="price">€35.00</p>
         </div>
       </a>
     </div>
-    <a href="https://www.mmstore.com/" class="button glowy" target="_blank">Visit our shop</a>
+    <a href="https://www.mmstore.com/" class="button glowy" target="_blank">Visit the MM Store</a>
   </section>
 </template>
 
@@ -51,6 +55,7 @@
 
   img {
     width: 100%;
+    transition: box-shadow 0.1s ease-in-out;
   }
 
   h3 {
@@ -58,10 +63,23 @@
     margin: 0;
   }
 
+  .details {
+    text-align: center;
+  }
+
   .price {
     text-align: center;
 
     display: none;
+  }
+
+  &:hover {
+    img {
+      box-shadow: 0 0 0.5rem $color-theme-light-2;
+    }
+    h3, .details, .price {
+      color: $color-theme-light-2;
+    }
   }
 }
 .button {

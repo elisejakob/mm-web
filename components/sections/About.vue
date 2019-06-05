@@ -2,8 +2,8 @@
   <section id="about" class="about">
     <h2 class="section-title">Our story</h2>
     <img :src="about.mainImage[0].url" class="section-image" alt="The boys in action" />
-    <p class="lead">Marcus&amp;Martinus is the biggest pop phenomenon coming from Scandinavia in years. Only 17 years old, the twins from Norway have already established themselves as successful artists in large parts of Europe. Their catchy pop music and magnetic stage presence is impossible not to like, which their ever growing fan base of MMers all over the world agrees on!</p>
-    <p>Their third album «Moments» is out now – and on their first ever European tour, «Moments Tour» they are playing for sold out venues in a total of 14 different countries.</p>
+    <p class="lead">Marcus&amp;Martinus is the biggest pop phenomenon coming from Scandinavia in years. Only 17 years old, the twins from Norway have already established themselves as successful artists in large parts of Europe.</p>
+    <p>Their catchy pop music and magnetic stage presence is impossible not to like, which their ever growing fan base of MMers all over the world agrees on! Their third album «Moments» is out now – and on their first ever European tour, «Moments Tour» they are playing for sold out venues in a total of 14 different countries.</p>
     <div class="both" id="both">
       <div class="m-info">
         <p class="read-more" @click="readMore('both')">Read our full story</p>
@@ -98,7 +98,7 @@ export default {
   margin-bottom: 10rem;
 
   .section-image {
-    margin: 1rem auto 2rem;
+    margin: 0 auto;
   }
 
   @media (max-width: $media-s) {
