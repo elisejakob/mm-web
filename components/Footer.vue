@@ -10,7 +10,7 @@
     <nav class="footer-nav">
       <nuxt-link to="/cookies">Cookies</nuxt-link>
       <nuxt-link to="/contact">Contact our team</nuxt-link>
-      <a href="https://jakobsenfrukt.no" target="_blank" class="credit">Website by JF&amp;G 🍌</a>
+      <a href="https://jakobsenfrukt.no" target="_blank" class="credit">Website by JF&amp;G 🍍</a>
     </nav>
   </footer>
 </template>

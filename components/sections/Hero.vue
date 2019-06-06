@@ -101,7 +101,7 @@ export default {
   &-label {
     position: absolute;
     left: 0;
-    top: 64%;
+    top: 73%;
     z-index: 3;
     display: inline-block;
     background: $color-black;
@@ -196,9 +196,9 @@ export default {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -3.5rem;
+  bottom: -2.5rem;
   margin: 0;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   display: none;
   max-width: none;
 

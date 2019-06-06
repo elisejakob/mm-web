@@ -2,13 +2,19 @@
   <section id="about" class="about">
     <h2 class="section-title">Our story</h2>
     <img :src="about.mainImage[0].url" class="section-image" alt="The boys in action" />
-    <p class="lead">Marcus&amp;Martinus is the biggest pop phenomenon coming from Scandinavia in years. Only 17 years old, the twins from Norway have already established themselves as successful artists in large parts of Europe.</p>
-    <p>Their catchy pop music and magnetic stage presence is impossible not to like, which their ever growing fan base of MMers all over the world agrees on! Their third album «Moments» is out now – and on their first ever European tour, «Moments Tour» they are playing for sold out venues in a total of 14 different countries.</p>
+    <p class="lead">Marcus&amp;Martinus is the biggest pop phenomenon coming from Scandinavia in years. Their EP <em>SOON</em> is out now – representing the phase of being on their way forward and growing up together with their fans.</p>
+    <p>By the age of 17, the twins from Norway are already established as successful artists in large parts of Europe. Their catchy pop music and magnetic stage presence is impossible not to like, which their ever growing fan base of MMers all over the world agrees on!</p>
     <div class="both" id="both">
       <div class="m-info">
         <p class="read-more" @click="readMore('both')">Read our full story</p>
         <div class="more">
-          <p>Marcus&amp;Martinus are all about creating new moments together as brothers and with their fans – and their story has only just begun.</p>
+          <p>The story about Marcus&amp;Martinus begins in 2002, when they were born on February 21st. Raised in the small town of Trofors in Northern Norway, they both enjoyed singing and entertaining from an early age. At the age of nine they wrote their first song <em>To Dråper Vann</em> and entered the Norwegian singing contest MGPjr in 2012. The boys charmed all of Norway, and ended up winning the contest live on national TV.</p>
+          <p>Their debut album <em>Hei</em> included the massive hit song <em>Elektrisk</em>. The album holds the record of staying the longest on top 10 on the Norwegian charts, with more than 66 coherent weeks!</p>
+          <p>As their fan base grew, both in Norway and abroad, Marcus&amp;Martinus released their first English album, named <em>Together</em>. The album marked the start of a new era in their career, and was followed by their first ever arena tour. The Together Tour sold out arenas in both Norway, Sweden, Denmark and Finland!</p>
+          <p>In 2017, Marcus&amp;Martinus won <em>Artists of the year</em> at the prestigious awards Spellemann (the Norwegian Grammy), as the youngest artists ever, for the impressive year they’d had.</p>
+          <p>Their third album <em>Moments</em> came in November 2017, and were followed by Marcus&amp;Martinus’ first ever European tour, Moments Tour, with 26 shows in 14 countries. Later in 2018 they got to tour together with their big idol, Jason Derulo, on his 2Sides Tour through Europe.</p>
+          <p>Touring and meeting old and new fans is amongst Marcus&amp;Martinus’ definite favorite things to do, and there is no doubt that you will see more of them in the months to come.</p>
+          <p>Don’t give up on your dreams, soon they might come true ❤️</p>
         </div>
       </div>
     </div>
@@ -22,13 +28,14 @@
           <div class="more">
             <ul class="facts">
               <li>Eyes: Brown</li>
-              <li>Height: Ca 176 cm</li>
+              <li>Height: Ca 181 cm</li>
               <li>Relationship status: Single</li>
-              <li>Favorite football team: Chelsea</li>
-              <li>How to tell him from Marcus: A mole on the upper lip</li>
+              <li>Favorite football team: Manchester United</li>
+              <li>How to tell him from Martinus: A little bit taller, and longer hair</li>
             </ul>
-            <p>My favorite moments with our fans is always when we’re on stage, performing, and to see them smile and be happy because of us. That makes me extremely happy. When they sing along and go all crazy!</p>
-            <p>My favorite moment of our career is the Voldsløkka-concert we had in Oslo, everything just felt so right from the beginning to the end and the crowd was amazing. And when we played in front of 70.000 people in Greece and the local police had to escort us out of the arena afterwards. That was pretty cool!</p>
+            <blockquote>
+              I think "SOON" most of all means that we’re going somewhere. For me "SOON" is another step on the way to where we want to go, you know? Where we want to be in like a year, and what things we want to make happen. "SOON" means that something is changing. And change is good!
+            </blockquote>  
             <ul class="social">
               <li>Instagram: <a href="https://www.instagram.com/marcusgunnarsen/" target="_blank">@marcusgunnarsen</a></li>
             </ul>
@@ -43,13 +50,14 @@
           <div class="more">
             <ul class="facts">
               <li>Eyes: Brown</li>
-              <li>Height: Ca 176 cm</li>
+              <li>Height: Ca 180 cm</li>
               <li>Relationship status: Single</li>
               <li>Favorite football team: Chelsea</li>
               <li>How to tell him from Marcus: A mole on the upper lip</li>
             </ul>
-            <p>My favorite moments with our fans is always when we’re on stage, performing, and to see them smile and be happy because of us. That makes me extremely happy. When they sing along and go all crazy!</p>
-            <p>My favorite moment of our career is the Voldsløkka-concert we had in Oslo, everything just felt so right from the beginning to the end and the crowd was amazing. And when we played in front of 70.000 people in Greece and the local police had to escort us out of the arena afterwards. That was pretty cool!</p>
+            <blockquote>
+              When you say "SOON" you make a promise. It means you’re waiting for something, and sometimes "SOON" can’t come fast enough, right? I think it is a lot of hope in "SOON", because it means that something is happening.
+            </blockquote>
             <ul class="social">
               <li>Instagram: <a href="https://www.instagram.com/martinusgunnarsen/" target="_blank">@martinusgunnarsen</a></li>
             </ul>
@@ -215,6 +223,20 @@ export default {
       color: $color-theme-light;
       border-color: $color-theme-light;
     }
+  }
+}
+
+blockquote {
+  margin: 2rem auto;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-style: italic;
+  font-weight: 300;
+  &:before {
+    content: "«";
+  }
+  &:after {
+    content: "»";
   }
 }
 

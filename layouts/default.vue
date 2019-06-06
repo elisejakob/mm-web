@@ -5,6 +5,7 @@
     <nuxt />
     <Gif />
     <Greeting />
+    <Fruit />
     <Footer />
   </div>
 </template>
@@ -15,6 +16,7 @@ import Footer from '~/components/Footer.vue'
 import Gif from '~/components/Gif.vue'
 import Greeting from '~/components/Greeting.vue'
 import Gradient from '~/components/Gradient.vue'
+import Fruit from '~/components/Fruit.vue'
 
 export default {
   layout: 'default',
@@ -23,6 +25,7 @@ export default {
     Gif,
     Greeting,
     Gradient,
+    Fruit,
     Footer
   },
   data: function() {

@@ -10,7 +10,7 @@
             <span class="city">{{ concert.city }}, {{ concert.country }}</span>
             <span class="venue">{{ concert.venue }}</span>
           </div>
-          <a href="#" class="button tickets">Get tickets</a>
+          <a :href="concert.ticketUrl" target="_blank" class="button tickets">Get tickets</a>
         </li>
       </ul>
     </div>
@@ -65,7 +65,7 @@ export default {
   .concert-list {
     list-style: none;
     margin: 0;
-    padding: 1rem;
+    padding: 0.5rem;
 
     text-transform: uppercase;
 
@@ -113,7 +113,6 @@ export default {
     margin-top: 0;
 
     .concert-list {
-      padding: 0.5rem;
       line-height: 1.3;
 
       &-item {

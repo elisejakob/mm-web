@@ -3,7 +3,7 @@
     <h2 class="section-title">Shop</h2>
     <div class="shop-list">
       <a href="https://mmstore.com/collections/all-products3/products/hoodie-18-black" target="_blank" class="shop-item">
-        <img src="/images/shop/hoodieblack.jpg">
+        <img src="/images/shop/hoodieblack.jpg" alt="A black hoodie">
         <div class="shop-item-text">
           <h3>Hoodie 18'</h3>
           <p class="details">Black</p>
@@ -11,7 +11,7 @@
         </div>
       </a>
       <a href="https://mmstore.com/collections/all-products3/products/mobile-cover-18-yellow" target="_blank" class="shop-item">
-        <img src="/images/shop/mobileyellow.jpg">
+        <img src="/images/shop/mobileyellow.jpg" alt="A yellow mobile cover">
         <div class="shop-item-text">
           <h3>Mobile Cover 18'</h3>
           <p class="details">Yellow</p>
@@ -19,7 +19,7 @@
         </div>
       </a>
       <a href="https://mmstore.com/collections/all-products3/products/tee-logo-grey" target="_blank" class="shop-item">
-        <img src="/images/shop/teegrey.jpg">
+        <img src="/images/shop/teegrey.jpg" alt="A grey t-shirt">
         <div class="shop-item-text">
           <h3>T-shirt 18'</h3>
           <p class="details">Grey</p>
@@ -27,7 +27,7 @@
         </div>
       </a>
       <a href="https://mmstore.com/collections/all-products3/products/track-pants-grey-18" target="_blank" class="shop-item">
-        <img src="/images/shop/greypants.jpg">
+        <img src="/images/shop/greypants.jpg" alt="Grey track pants">
         <div class="shop-item-text">
           <h3>Track pants 18'</h3>
           <p class="details">Grey</p>
@@ -78,7 +78,7 @@
       box-shadow: 0 0 0.5rem $color-theme-light-2;
     }
     h3, .details, .price {
-      color: $color-theme-light-2;
+      color: $color-theme-light;
     }
   }
 }

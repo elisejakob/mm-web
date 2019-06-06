@@ -1,5 +1,5 @@
 <template>
-  <div class="greeting">
+  <div v-if="message" class="greeting">
     <JumpingText :text="message" :style="style" />
   </div>
 </template>
@@ -13,19 +13,14 @@ export default {
   data: function() {
     return {
       day: null,
-      message: 'MMers Friday',
+      message: null,
       style: null
     }
   },
   methods: {
     updateMessage: function() {
-      if (this.day === 2) {
-        this.message = 'Hi there'
-      } else if (this.day === 3) {
-        this.message = 'MMers Friday';
-        this.style = {
-          color: 'rgb(255, 200, 220)'
-        }
+      if (this.day === 5) {
+        this.message = 'MMers Friday!';
       }
     }
   },
