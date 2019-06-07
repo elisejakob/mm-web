@@ -8,6 +8,7 @@
       Postboks 4334 Nydalen<br />
       0402 Oslo, Norway
     </p>
+    <p>For other inquiries, please <nuxt-link to="/contact">contact our team</nuxt-link>.</p>
   </section>
 </template>
 

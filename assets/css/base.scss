@@ -86,7 +86,6 @@ button, .button {
   transition: all .2s ease-in-out;
 
   &:hover {
-    color: $color-theme-dark;
     background: transparent;
     cursor: pointer;
   }
@@ -125,9 +124,16 @@ button, .button {
   }
 
   &.gradient {
-    background: linear-gradient(120deg, $color-theme-light-2, $color-theme-light);
+    background: linear-gradient(120deg, $color-theme-light-2, $color-theme-light, $color-theme-light-2, $color-theme-light);
     border: none;
-    box-shadow: 0.3rem 0.3rem 0 $color-black;
+    box-shadow: 0.05rem 0.2rem 0 $color-black;
+    background-size: 300% 300%;
+
+    &:hover {
+      animation: gradientbutton 12s linear infinite;
+      transform: translate(-0.05rem, -0.1rem);
+      box-shadow: 0.1rem 0.3rem 0 $color-black;
+    }
   }
 }
 

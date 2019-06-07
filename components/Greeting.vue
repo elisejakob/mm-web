@@ -1,6 +1,6 @@
 <template>
   <div v-if="message" class="greeting">
-    <JumpingText :text="message" :style="style" />
+    <JumpingText :text="message" />
   </div>
 </template>
 
@@ -10,22 +10,33 @@ export default {
   components: {
     JumpingText
   },
+  props: {
+    day: Number,
+    holiday: String
+  },
   data: function() {
     return {
-      day: null,
-      message: null,
-      style: null
+      message: 'Soon happened!',
     }
   },
   methods: {
     updateMessage: function() {
-      if (this.day === 5) {
+      if (this.holiday === 'christmas') {
+        this.message = 'Merry christmas!';
+      } else if (this.holiday === 'valentines') {
+        this.message = 'Happy valentines day!';
+      } else if (this.holiday === 'halloween') {
+        this.message = 'Trick or treat!';
+      } else if (this.holiday === 'birthday') {
+        this.message = 'Happy birthday to us!';
+      } else if (this.holiday === 'nationalday') {
+        this.message = 'International MMers day!';
+      } else if (this.day === 5) {
         this.message = 'MMers Friday!';
       }
     }
   },
   created() {
-    this.day = new Date().getDay();
     this.updateMessage();
   }
 }

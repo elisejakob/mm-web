@@ -16,7 +16,7 @@
       <a href="https://twitter.com/marcusmartinus" target="_blank">Twitter</a>
       <a href="https://www.youtube.com/channel/UCRUmSbfoolI9b8iRyrGqFUw" target="_blank">Youtube</a>
       <a href="https://www.instagram.com/marcusandmartinus/" target="_blank">Instagram</a>
-      <a href="#" target="_blank">Spotify</a>
+      <a href="https://open.spotify.com/artist/3N4FiTxpPQRsrihmTMN349?si=N-WI45P2S1CgQLkwgk7R5A" target="_blank">Spotify</a>
       <a href="http://vm.tiktok.com/dH7p8e/" target="_blank">Tiktok</a>
       <a href="https://giphy.com/MarcusandMartinus" target="_blank">Giphy</a>
     </marquee-text>
@@ -50,7 +50,7 @@ export default {
   top: 1rem;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1006;
   background: black;
   padding: 0.5rem 0 0.3rem;
   overflow: hidden;

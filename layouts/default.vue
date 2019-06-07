@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Gradient />
+    <Gradient :scrolled="scrolled" />
     <Header />
     <nuxt />
-    <Gif />
-    <Greeting />
+    <Gif :holiday="holiday" :day="day" />
+    <Greeting :holiday="holiday" :day="day" />
     <Fruit />
     <Footer />
   </div>
@@ -30,7 +30,25 @@ export default {
   },
   data: function() {
     return {
-      activeSection: 'hero'
+      activeSection: 'hero',
+      scrolled: 0,
+      date: null,
+      day: null
+    }
+  },
+  computed: {
+    holiday: function() {
+      if (this.date.getMonth() == 11 && this.date.getDate() == 24) {
+        return 'christmas';
+      } else if (this.date.getMonth() == 1 && this.date.getDate() == 14) {
+        return 'valentines';
+      } else if (this.date.getMonth() == 9 && this.date.getDate() == 31) {
+        return 'halloween';
+      } else if (this.date.getMonth() == 1 && this.date.getDate() == 21) {
+        return 'birthday';
+      } else if (this.date.getMonth() == 8 && this.date.getDate() == 1) {
+        return 'nationalday';
+      }
     }
   },
   methods: {
@@ -49,6 +67,10 @@ export default {
     handleScroll: function() {
       this.fadeIn();
       this.updateMenu();
+
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      this.scrolled = (winScroll / height) * 100;
     },
     fadeIn: function() {
       const sections = document.querySelectorAll('section');
@@ -68,6 +90,10 @@ export default {
         }
       }
     }
+  },
+  created() {
+    this.date = new Date();
+    this.day = new Date().getDay();
   },
   mounted() {
     this.fadeIn();
