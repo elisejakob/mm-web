@@ -37,7 +37,8 @@ export default {
         { 
           hid: 'description', 
           name: 'description', 
-          content: 'Marcus & Martinus is currently the biggest pop act in the Nordic region. Get the latest updates here. News, pictures, concerts, etc.. @marcusandmartinus.' }
+          content: 'Marcus & Martinus is currently the biggest pop act in the Nordic region. Get the latest updates here. News, pictures, concerts, etc.. @marcusandmartinus.' 
+        }
       ]
     }
   }

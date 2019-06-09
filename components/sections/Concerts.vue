@@ -124,6 +124,9 @@ export default {
 
     .concert-list {
       line-height: 1.3;
+      padding: 0;
+      margin-top: 0.5rem;
+      box-shadow: 0 0 0 0.5rem $color-black;
 
       &-item {
         justify-content: flex-start;

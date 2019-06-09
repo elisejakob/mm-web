@@ -39,11 +39,18 @@ h3 {
   font-size: 1rem;
 }
 @media (max-width: $media-s) {
+  .videos {
+    padding: 2.5rem 1rem;
+  }
   .half {
     margin-bottom: 0;
+    padding: 1rem 0;
   }
   .button {
     width: 100%;
+  }
+  .video-wrapper {
+    margin: 0;
   }
 }
 </style>

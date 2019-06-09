@@ -31,6 +31,10 @@
     background: $color-theme-light;
     color: $color-black;
     transform: rotate(-3deg);
+
+    @media (max-width: $media-s) {
+      font-size: 1.25rem;
+    }
   }
 }
 </style>

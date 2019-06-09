@@ -159,8 +159,9 @@ export default {
       width: 100%;
 
       .before {
-        left: auto;
-        right: 0;
+        transform: rotate(-6deg);
+        left: 1rem;
+        top: -1rem;
       }
     }
     &-text {

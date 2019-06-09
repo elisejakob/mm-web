@@ -28,35 +28,9 @@ export default {
 @import '@/assets/css/variables.scss';
 .site-main {
   position: relative;
+  padding: 0 1rem;
 }
 .section-title {
   padding-top: 5rem;
-}
-.person-list {
-  list-style: none;
-  margin: 4rem auto;
-  padding: 0 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: $width-l;
-}
-.person {
-  width: 100%;
-  margin-bottom: 4rem;
-
-  &-title {
-    font-size: 1.5rem;
-    font-weight: 300;
-    text-transform: uppercase;
-  }
-  &-name {
-    font-size: 1.5rem;
-    margin: 0;
-    text-transform: none;
-  }
-  &-link {
-    font-size: 1.5rem;
-    font-weight: 300;
-  }
 }
 </style>
