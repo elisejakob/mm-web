@@ -70,7 +70,7 @@ export default {
     //errorHandler: '~/plugins/apollo-error-handler.js',
     clientConfigs: {
       default: {
-        httpEndpoint: (devMode ? 'http://localhost:3000/api' : 'https://mm-admin.jakobsenfrukt.no/api'),
+        httpEndpoint: (devMode ? 'http://localhost:3000/api' : 'https://admin.marcusandmartinus.com/api'),
         wsEndpoint: null,
         httpLinkOptions: {
           headers: {
@@ -82,7 +82,7 @@ export default {
   },
 
   proxy: [
-    [ 'https://mm-admin.jakobsenfrukt.no/api', { ws: false } ]
+    [ 'https://admin.marcusandmartinus.com/api', { ws: false } ]
   ],
 
   /*
