@@ -3,7 +3,7 @@
     <div class="gif" :class="{ visible: isVisible }">
       <img :src="gif" />
     </div>
-    <div class="gifbutton" @click="$store.dispatch('showGif', { image: '/gifs/small/cute.gif', duration: null})"></div>
+    <div class="gifbutton" @click="$store.dispatch('showGif', { image: '/gifs/small/cute.gif', duration: 2400})"></div>
   </div>
 </template>
 
