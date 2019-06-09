@@ -26,7 +26,7 @@
         </div>
       </div>
       <p class="more">
-        On <a href="#">Spotify</a>, <a href="#">Apple Music</a>, <a href="#">iTunes</a>, <a href="#">Tidal</a>
+        On <a href="https://open.spotify.com/artist/3N4FiTxpPQRsrihmTMN349?si=N-WI45P2S1CgQLkwgk7R5A" target="_blank">Spotify</a>, <a href="https://music.apple.com/us/artist/marcus-martinus/551127180" target="_blank">Apple Music</a>, <a href="https://www.deezer.com/us/artist/3697701" target="_blank">Deezer</a>, <a href="https://tidal.com/browse/artist/4691379" target="_blank">Tidal</a>
       </p>
     </div>
   </section>

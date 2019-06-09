@@ -3,7 +3,7 @@
     <div class="gif" :class="{ visible: isVisible }">
       <img :src="gif" />
     </div>
-    <div class="gifbutton" @click="showGif('/gifs/small/birthday.gif')"></div>
+    <div class="gifbutton" @click="$store.dispatch('showGif', { image: '/gifs/small/cute.gif', duration: null})"></div>
   </div>
 </template>
 
@@ -13,41 +13,30 @@ export default {
     day: Number,
     holiday: String
   },
-  data: function() {
-    return {
-      gif: '/gifs/small/hi.gif',
-      isVisible: false,
-      timeout: null
-    }
-  },
-  methods: {
-    showGif: function(image) {
-      clearInterval(this.timeout);
-      this.gif = image;
-      this.isVisible = true;
-      this.timeout = setTimeout(()=>{
-        this.isVisible = false;
-      }, 3600)
+  computed: {
+    gif() {
+      return this.$store.state.gif
+    },
+    isVisible() {
+      return this.$store.state.isVisible
     }
   },
   mounted() {
+    var image = '/gifs/small/hi.gif';
     if (this.holiday === 'christmas') {
-      this.gif = '/gifs/small/hi.gif';
+      image = '/gifs/small/hi.gif';
     } else if (this.holiday === 'valentines') {
-      this.gif = '/gifs/small/kiss.gif';
+      image = '/gifs/small/kiss.gif';
     } else if (this.holiday === 'halloween') {
-      this.gif = '/gifs/small/hi.gif';
+      image = '/gifs/small/hi.gif';
     } else if (this.holiday === 'birthday') {
-      this.gif = '/gifs/small/birthday.gif';
+      image = '/gifs/small/birthday.gif';
     } else if (this.holiday === 'nationalday') {
-      this.gif = '/gifs/small/cute.gif';
+      image = '/gifs/small/cute.gif';
     } else if (this.day === 5) {
-      this.gif = '/gifs/small/love.gif';
-    }
-    this.isVisible = true;
-    this.timeout = setTimeout(()=>{
-      this.isVisible = false;
-    }, 3600)
+      image = '/gifs/small/love.gif';
+    };
+    this.$store.dispatch('showGif', {image, duration: 3600});
   }
 }
 </script>

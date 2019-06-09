@@ -93,6 +93,9 @@ export default {
   },
   methods: {
     readMore: function(name) {
+      if (name === 'both' && !document.getElementById(name).classList.contains('visible')) {
+        this.$store.dispatch('showGif', { image: '/gifs/small/selfie.gif', duration: 3000})
+      }
       document.getElementById(name).classList.toggle('visible')
     }
   }
@@ -246,10 +249,11 @@ blockquote {
   }
   .half {
     &.visible {
-      margin-bottom: 40rem;
+      margin-bottom: 1rem;
     }
     .m-info {
       width: 100%;
+      position: relative;
     }
   }
 }

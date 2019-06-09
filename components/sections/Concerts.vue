@@ -10,7 +10,7 @@
             <span class="city">{{ concert.city }}, {{ concert.country }}</span>
             <span class="venue">{{ concert.venue }}</span>
           </div>
-          <a :href="concert.ticketUrl" target="_blank" class="button tickets">Get tickets</a>
+          <a :href="concert.ticketUrl" target="_blank" class="button tickets" @mouseover="$store.dispatch('showGif', { image: '/gifs/small/thumbsup.gif', duration: null})" @mouseleave="$store.commit('hideGif')">Get tickets</a>
         </li>
       </ul>
     </div>

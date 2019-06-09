@@ -50,7 +50,7 @@ export default {
   beforeMount: function() {
     var now = new Date();
     var time = now.getUTCHours() + 2;
-    if (time > 6 && time < 14) {
+    if (time > 6 && time < 18) {
       this.night = false;
       document.body.classList.add('day');
     }
