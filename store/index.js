@@ -1,6 +1,6 @@
 export const state = () => ({
   counter: 0,
-  gif: '/gifs/small/hi.gif',
+  gif: null,
   isVisible: false,
   timeout: null
 })
@@ -8,6 +8,7 @@ export const state = () => ({
 export const actions = {
   showGif (context, {image, duration}) {
     clearInterval(state.timeout);
+    state.gif = null;
     context.commit('showGif', image);
     if (duration) {
       context.dispatch('hideGif', duration);
@@ -27,6 +28,7 @@ export const mutations = {
     state.isVisible = true;
   },
   hideGif (state) {
+    state.gif = null;
     state.isVisible = false;
   }
 }

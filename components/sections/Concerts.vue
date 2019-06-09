@@ -1,6 +1,6 @@
 <template>
   <section id="concerts" class="concerts">
-    <img :src="concerts.mainImage[0]" class="section-image" alt="A recent MM-concert" />
+    <img :src="concerts.mainImage[0].url" class="section-image" alt="A recent MM-concert" />
     <div class="concert-wrapper">
       <h2 class="section-title">Concerts</h2>
       <ul class="concert-list">
@@ -29,7 +29,7 @@ export default {
   apollo: {
     concerts: gql`
     query {
-      concerts: entries(section:concerts) {
+      concerts: entry(title: "Concerts") {
     		... on Concerts {
           mainImage {
             url
