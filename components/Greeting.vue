@@ -16,7 +16,7 @@ export default {
   },
   data: function() {
     return {
-      message: 'Soon happened!',
+      message: null,
     }
   },
   methods: {
