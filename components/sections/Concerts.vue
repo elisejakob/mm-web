@@ -1,10 +1,10 @@
 <template>
   <section id="concerts" class="concerts">
-    <img src="https://mm.jakobsenfrukt.no/assets/concerts.jpg" class="section-image" alt="A recent MM-concert" />
+    <img :src="concerts.mainImage[0]" class="section-image" alt="A recent MM-concert" />
     <div class="concert-wrapper">
       <h2 class="section-title">Concerts</h2>
       <ul class="concert-list">
-        <li class="concert-list-item" v-for="(concert, index) in concerts" :key="index">
+        <li class="concert-list-item" v-for="(concert, index) in concertlist" :key="index">
           <div class="date">{{ concert.date }}</div>
           <div class="location">
             <span class="city">{{ concert.city }}, {{ concert.country }}</span>
@@ -31,6 +31,16 @@ export default {
     query {
       concerts: entries(section:concerts) {
     		... on Concerts {
+          mainImage {
+            url
+          }
+        }
+      }
+    }`,
+    concertlist: gql`
+    query {
+      concertlist: entries(section:concertlist) {
+    		... on Concertlist {
           date @date(as:"F j")
           city
           country
