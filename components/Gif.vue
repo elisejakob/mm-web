@@ -3,7 +3,7 @@
     <div class="gif" :class="{ visible: isVisible }">
       <img :src="gif" />
     </div>
-    <div class="gifbutton" @click="isVisible = !isVisible"></div>
+    <div class="gifbutton" @click="showGif('/gifs/small/birthday.gif')"></div>
   </div>
 </template>
 
@@ -16,7 +16,18 @@ export default {
   data: function() {
     return {
       gif: '/gifs/small/hi.gif',
-      isVisible: false
+      isVisible: false,
+      timeout: null
+    }
+  },
+  methods: {
+    showGif: function(image) {
+      clearInterval(this.timeout);
+      this.gif = image;
+      this.isVisible = true;
+      this.timeout = setTimeout(()=>{
+        this.isVisible = false;
+      }, 3600)
     }
   },
   mounted() {
@@ -34,9 +45,8 @@ export default {
       this.gif = '/gifs/small/love.gif';
     }
     this.isVisible = true;
-    setTimeout(()=>{
+    this.timeout = setTimeout(()=>{
       this.isVisible = false;
-      console.log('poop')
     }, 3600)
   }
 }
@@ -52,11 +62,11 @@ export default {
   max-width: 200px;
   z-index: 1000;
 
-  transform: translateY(300px);
+  transform: translateY(300px) scale(0);
   transition: transform .5s linear;
 
   &.visible {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     transition: transform .5s linear;
   }
 
@@ -70,8 +80,13 @@ export default {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 10px;
-  height: 10px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+}
+@media (max-width: $media-s) {
+  .gif, .gifbutton {
+    display: none;
+  }
 }
 </style>
