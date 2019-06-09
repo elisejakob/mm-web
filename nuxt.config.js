@@ -1,7 +1,12 @@
 import pkg from './package'
 
+const devMode = (process.env.NODE_ENV !== 'production');
+
 export default {
   mode: 'universal',
+
+  /* Dev mode? */
+  dev: devMode,
 
   /*
   ** Headers of the page
@@ -63,10 +68,8 @@ export default {
     //errorHandler: '~/plugins/apollo-error-handler.js',
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://localhost:3000/api',
-        //httpEndpoint: 'https://mm-admin.jakobsenfrukt.no/api',
+        httpEndpoint: (devMode ? 'http://localhost:3000/api' : 'https://mm-admin.jakobsenfrukt.no/api'),
         wsEndpoint: null,
-        // getAuth: () => 'Bearer 8PtFtE3G5i1Mk5eIClv4PWKLsrNPMYlOj15-Gr4uZ5OPUBCwqTj0oeb3erwYueJU'
         httpLinkOptions: {
           headers: {
             'Authorization': 'Bearer 8PtFtE3G5i1Mk5eIClv4PWKLsrNPMYlOj15-Gr4uZ5OPUBCwqTj0oeb3erwYueJU'
