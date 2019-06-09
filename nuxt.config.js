@@ -45,6 +45,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    // https://github.com/nuxt/nuxtjs.org/tree/master/modules/static
+    '~/modules/static/',
     ['@nuxtjs/google-tag-manager', { 
       id: 'GTM-NZN36LJ',
       pageTracking: true,
