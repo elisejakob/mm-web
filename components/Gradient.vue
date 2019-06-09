@@ -11,40 +11,7 @@ export default {
   },
   data: function() {
     return {
-      style: {
-        background: this.gradient
-      },
       night: true
-    }
-  },
-  computed: {
-    gradient: function() {
-      /*
-
-      work in progress
-      changing background color gradually with scroll
-      
-      min 0 - max 100
-      scrolled
-
-      min light[0] - max dark[0]
-      min light[0] - max dark[0]
-      */
-
-      var left = ['245', '178', '1'];
-      var left2 = ['118', '24', '24'];
-      var right = ['166', '199', '188'];
-      var right2 = ['72', '100', '112'];
-
-      var r = [left[0], right[0]];
-      var g = [left[1], right[1]];
-      var b = [left[2], right[2]];
-
-      var leftColor = 'rgb(245, 178, 1)';
-      var rightColor = 'rgb(166, 199, 188)';
-      var gradient = 'linear-gradient(90deg, ' + leftColor + ', ' + rightColor + ')';
-
-      return gradient;
     }
   },
   beforeMount: function() {
