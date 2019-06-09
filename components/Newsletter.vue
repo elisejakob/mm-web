@@ -60,6 +60,7 @@ export default {
     text-align: center;
     outline: none;
     margin-bottom: 0.5rem;
+    border-radius: 0;
     &:focus, &:hover, &:active {
       border: 2px solid $color-theme-light;
     }
