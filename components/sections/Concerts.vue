@@ -4,8 +4,8 @@
     <div class="concert-wrapper">
       <h2 class="section-title">Concerts</h2>
       <ul class="concert-list">
-        <li class="concert-list-item" v-for="(concert, index) in concertlist" :key="index">
-          <div class="date">{{ concert.date }}</div>
+        <li class="concert-list-item" v-for="(concert, index) in futureConcerts" :key="index">
+          <div class="date">{{ $moment.unix(concert.date).format('MMMM D') }}</div>
           <div class="location">
             <span class="city">{{ concert.city }}, {{ concert.country }}</span>
             <span class="venue">{{ concert.venue }}</span>
@@ -20,11 +20,22 @@
 
 <script>
 import gql from 'graphql-tag'
+import Moment from 'moment'
 import Newsletter from '~/components/Newsletter.vue'
 
 export default {
   components: {
     Newsletter
+  },
+  computed: {
+    futureConcerts: function() {
+      var today = new Date();
+
+      return this.concertlist.filter(function(concert) {
+        var concertDate = new Date(concert.date*1000);
+        return concertDate >= today;
+      });
+    }
   },
   apollo: {
     concerts: gql`
@@ -41,7 +52,7 @@ export default {
     query {
       concertlist: entries(section:concertlist) {
     		... on Concertlist {
-          date @date(as:"F j")
+          date
           city
           country
           venue

@@ -54,7 +54,8 @@ export default {
     }],
     'vue-scrollto/nuxt',
     '@nuxtjs/apollo',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    '@nuxtjs/moment',
   ],
 
   apollo: {
