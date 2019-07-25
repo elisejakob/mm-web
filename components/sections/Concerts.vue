@@ -3,7 +3,7 @@
     <img :src="concerts.mainImage[0].url" class="section-image" alt="A recent MM-concert" />
     <div class="concert-wrapper">
       <h2 class="section-title">Concerts</h2>
-      <ul class="concert-list">
+      <ul v-if="futureConcerts.length" class="concert-list">
         <li class="concert-list-item" v-for="(concert, index) in futureConcerts" :key="index">
           <div class="date">{{ $moment.unix(concert.date).format('MMMM D') }}</div>
           <div class="location">
@@ -13,6 +13,9 @@
           <a :href="concert.ticketUrl" target="_blank" class="button tickets" @mouseover="$store.dispatch('showGif', { image: '/gifs/small/thumbsup.gif', duration: null})" @mouseleave="$store.commit('hideGif')">Get tickets</a>
         </li>
       </ul>
+      <div v-else class="no-concerts">
+        <p>There are no upcoming concerts right now!</p>
+      </div>
     </div>
     <Newsletter heading="Be the first to know when we come to your city" />
   </section>
@@ -169,6 +172,14 @@ export default {
         align-self: stretch;
       }
     }
+  }
+}
+.no-concerts {
+  padding: 1rem;
+
+  p {
+    margin: 1rem auto;
+    text-align: center;
   }
 }
 </style>
