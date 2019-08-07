@@ -24,11 +24,11 @@ export default {
   mounted() {
     var image = '/gifs/small/hi.gif';
     if (this.holiday === 'christmas') {
-      image = '/gifs/small/hi.gif';
+      image = '/gifs/small/christmas1.gif';
     } else if (this.holiday === 'valentines') {
       image = '/gifs/small/kiss.gif';
     } else if (this.holiday === 'halloween') {
-      image = '/gifs/small/hi.gif';
+      image = '/gifs/small/halloween.gif';
     } else if (this.holiday === 'birthday') {
       image = '/gifs/small/birthday.gif';
     } else if (this.holiday === 'nationalday') {
@@ -36,7 +36,7 @@ export default {
     } else if (this.day === 5) {
       image = '/gifs/small/love.gif';
     };
-    this.$store.dispatch('showGif', {image, duration: 3600});
+    this.$store.dispatch('showGif', {image, duration: 6000});
   }
 }
 </script>
@@ -51,12 +51,12 @@ export default {
   max-width: 200px;
   z-index: 1000;
 
-  transform: translateY(300px) scale(0);
-  transition: transform .5s linear;
+  transform: translateY(300px);
+  transition: transform .8s linear;
 
   &.visible {
-    transform: translateY(0) scale(1);
-    transition: transform .5s linear;
+    transform: translateY(0);
+    transition: transform .6s linear;
   }
 
   img {

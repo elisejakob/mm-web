@@ -28,7 +28,6 @@ export const mutations = {
     state.isVisible = true;
   },
   hideGif (state) {
-    state.gif = null;
     state.isVisible = false;
   }
 }
