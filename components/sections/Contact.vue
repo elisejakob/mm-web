@@ -3,10 +3,10 @@
     <h2 class="section-title">Contact</h2>
     <p>We love hearing from you! Send fanmail to:</p>
     <p class="address">
-      M&amp;M<br />
-      Sony Music Norway<br />
-      Postboks 4334 Nydalen<br />
-      0402 Oslo, Norway
+      Marcus&amp;Martinus<br />
+      c/o Anti Brandpeople<br />
+      Sofienberggata 17<br />
+      0558 Oslo, Norway
     </p>
     <p>For other inquiries, please <nuxt-link to="/contact">contact our team</nuxt-link>.</p>
   </section>

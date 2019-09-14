@@ -46,14 +46,6 @@ export default {
           }
         },
         {
-          title: 'Label',
-          name: 'Leif Ribe',
-          link: {
-            url: 'mailto:leif.ribe@sonymusic.com',
-            text: 'leif.ribe@sonymusic.com'
-          }
-        },
-        {
           title: 'Booking Europe',
           name: 'Thomas Olavsen',
           link: {
