@@ -1,11 +1,11 @@
 <template>
   <main class="site-main">
     <Hero />
-    <Concerts class="fade-section" />
+    <Shop class="fade-section" />
     <Music class="fade-section" />
     <Videos class="fade-section" />
+    <Concerts class="fade-section" />
     <About class="fade-section" />
-    <Shop class="fade-section" />
     <Contact class="fade-section" />
   </main>
 </template>

@@ -66,7 +66,6 @@ export default {
     },
     handleScroll: function() {
       this.fadeIn();
-      this.updateMenu();
 
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -97,7 +96,6 @@ export default {
   },
   mounted() {
     this.fadeIn();
-    this.updateMenu();
     window.addEventListener('scroll', this.throttle(this.handleScroll, 200));
   },
   destroyed() {
