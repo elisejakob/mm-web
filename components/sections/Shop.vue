@@ -2,7 +2,7 @@
   <section id="shop" class="shop">
     <h2 class="section-title">Shop</h2>
     <div class="shop-list">
-      <a v-for="(shopItem, index) in shopItems" :key="index" href="https://mmstore.com/collections/all-products3/products/hoodie-18-black" target="_blank" class="shop-item">
+      <a v-for="(shopItem, index) in shopItems" :key="index" :href="shopItem.productUrl" target="_blank" class="shop-item">
         <img :src="shopItem.mainImage[0].productImage" alt="A black hoodie">
         <div class="shop-item-text">
           <h3>{{ shopItem.title }}</h3>
@@ -35,6 +35,7 @@ export default {
           mainImage {
             productImage: url(transform: productImage)
           }
+          productUrl
         }
       }
     }`
