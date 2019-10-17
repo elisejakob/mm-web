@@ -17,11 +17,11 @@
       </div>
     </div>
     <div class="hero-label" id="hero-more">
-      <ShinyText class="before" text="New music" />
+      <ShinyText class="before" text="New merch" />
       <div class="hero-text">
         <h2 class="section-title">Soon</h2>
         <div class="info">
-          Our new EP is out!
+          Check out our newest EP!
           <div class="read-more" @click="readMore('hero-more')">Listen</div>
         </div>
       </div>
