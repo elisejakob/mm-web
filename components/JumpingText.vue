@@ -19,25 +19,10 @@
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/css/variables.scss';
+@import '@/assets/css/animations.scss';
 .letter {
   display: inline-block;
   animation: jump 3s linear infinite;
   min-width: 0.5rem;
-}
-
-@keyframes jump {
-  0% { 
-    transform: translateY(0);
-  }
-  5% {
-    transform: translateY(-0.5rem);
-  }
-  10% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 </style>

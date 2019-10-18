@@ -2,14 +2,16 @@
   <section id="shop" class="shop">
     <h2 class="section-title">Shop</h2>
     <div class="shop-list">
-      <a v-for="(shopItem, index) in shopItems" :key="index" :href="shopItem.productUrl" target="_blank" class="shop-item">
-        <img :src="shopItem.mainImage[0].productImage" alt="A black hoodie">
-        <div class="shop-item-text">
-          <h3>{{ shopItem.title }}</h3>
-          <p class="details">{{ shopItem.details }}</p>
-          <p class="price">{{ shopItem.price }}</p>
-        </div>
-      </a>
+      <div v-for="(shopItem, index) in shopItems" :key="index" class="shop-item">
+        <a :href="shopItem.productUrl" target="_blank">
+          <img :src="shopItem.mainImage[0].productImage" alt="A black hoodie">
+          <div class="shop-item-text">
+            <h3>{{ shopItem.title }}</h3>
+            <!--<p class="details">{{ shopItem.details }}</p>-->
+            <!--<p class="price">{{ shopItem.price }}</p>-->
+          </div>
+        </a>
+      </div>
     </div>
     <a href="https://www.mmstore.com/" class="button glowy" target="_blank">Visit the MM Store</a>
   </section>
@@ -55,7 +57,10 @@ export default {
   width: 25%;
   display: block;
   padding: 1rem;
-  text-decoration: none;
+
+  a {
+    text-decoration: none;
+  }
 
   img {
     width: 100%;
@@ -64,11 +69,13 @@ export default {
 
   h3 {
     font-size: 1rem;
-    margin: 0;
+    margin: 0 auto .5rem;
   }
 
   .details {
     text-align: center;
+    font-size: $font-s;
+    line-height: 1.2;
   }
 
   .price {

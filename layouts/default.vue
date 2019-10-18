@@ -48,6 +48,8 @@ export default {
         return 'birthday';
       } else if (this.date.getMonth() == 8 && this.date.getDate() == 1) {
         return 'nationalday';
+      } else {
+        return 'none';
       }
     }
   },

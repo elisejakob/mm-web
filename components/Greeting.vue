@@ -33,10 +33,12 @@ export default {
         this.message = 'International MMers day!';
       } else if (this.day === 5) {
         this.message = 'MMers Friday!';
+      } else {
+        this.message = null;
       }
     }
   },
-  created() {
+  mounted() {
     this.updateMessage();
   }
 }
