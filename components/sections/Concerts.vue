@@ -14,7 +14,7 @@
         </li>
       </ul>
       <div v-else class="no-concerts">
-        <p>There are no upcoming concerts right now!</p>
+        <p>{{ concerts.fallbackText }}</p>
       </div>
     </div>
     <Newsletter heading="Be the first to know when we come to your city" />
@@ -48,6 +48,7 @@ export default {
           mainImage {
             url
           }
+          fallbackText
         }
       }
     }`,

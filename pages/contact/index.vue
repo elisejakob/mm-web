@@ -2,59 +2,37 @@
   <main class="site-main">
     <h1 class="section-title">Contact our team</h1>
     <ul class="person-list">
-      <li v-for="person in people" :key="person.name" class="person">
-        <span class="person-title">{{ person.title }}</span>
-        <h2 class="person-name">{{ person.name }}</h2>
-        <a v-if="person.link" :href="person.link.url" class="person-link">{{ person.link.text }}</a>
+      <li v-for="(person, index) in contactPage.team" :key="index" class="person">
+        <span class="person-title">{{ person.personTitle }}</span>
+        <h2 class="person-name">{{ person.personName }}</h2>
+        <a v-if="person.email" :href="`mailto:${person.email}`" target="_blank" class="person-link">{{ person.email }}</a>
+        <a v-if="person.websiteUrl && person.websiteLinkText" :href="person.websiteUrl" target="_blank" class="person-link">{{ person.websiteLinkText }}</a>
       </li>
     </ul>
   </main>
 </template>
 
 <script>
+import gql from 'graphql-tag'
 export default {
   layout: 'single',
-  data() {
-    return {
-      people: [
-        {
-          title: 'CEO M&M Artister AS',
-          name: 'Kjell-Erik Gunnarsen'
-        },
-        {
-          title: 'Business manager / PR',
-          name: 'Marte Schei',
-          link: {
-            url: 'mailto:marte@anti.as',
-            text: 'marte@anti.as'
-          }
-        },
-        {
-          title: 'Social media manager / PR',
-          name: 'Kirsti Kristoffersen',
-          link: {
-            url: 'mailto:kirsti@anti.as',
-            text: 'kirsti@anti.as'
-          }
-        },
-        {
-          title: 'Webshop',
-          name: 'MMStore Support',
-          link: {
-            url: 'https://support.mmstore.com',
-            text: 'Visit contact page'
-          }
-        },
-        {
-          title: 'Booking Europe',
-          name: 'Thomas Olavsen',
-          link: {
-            url: 'mailto:post@timeoutagency.no',
-            text: 'post@timeoutagency.no'
+  apollo: {
+    contactPage: gql`
+    query {
+      contactPage: entry(title: "Contact page") {
+        ... on ContactPage {
+          team {
+            ... on TeamTeamMember {
+              personName
+              personTitle
+              email
+              websiteUrl
+              websiteLinkText
+            }
           }
         }
-      ]
-    }
+      }
+    }`
   },
   head() {
     return {
