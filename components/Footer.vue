@@ -1,6 +1,6 @@
 <template>
   <footer class="site-footer">
-    <Newsletter heading="Stay in touch!" />
+    <Newsletter :heading="globals.footer.newsletterHeading" />
     <scroll-link href="#hero" class="to-top">
       <div class="icon">
         <img src="/images/rocket.png" alt="Rocket emoji" />
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import ScrollLink from '~/components/ScrollLink.vue'
 import Newsletter from '~/components/Newsletter.vue'
 
@@ -22,6 +23,16 @@ export default {
   components: {
     ScrollLink,
     Newsletter
+  },
+  apollo: {
+    globals: gql`
+    query {
+      globals {
+        footer {
+          newsletterHeading
+        }
+      }
+    }`
   }
 }
 </script>

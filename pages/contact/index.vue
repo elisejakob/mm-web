@@ -19,7 +19,7 @@ export default {
   apollo: {
     contactPage: gql`
     query {
-      contactPage: entry(title: "Contact page") {
+      contactPage: entry(title: "Contact our team") {
         ... on ContactPage {
           team {
             ... on TeamTeamMember {

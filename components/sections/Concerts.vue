@@ -49,6 +49,7 @@ export default {
             url
           }
           fallbackText
+          newsletterHeading
         }
       }
     }`,
