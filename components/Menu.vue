@@ -5,7 +5,7 @@
       :paused="isPaused"
       class="site-menu"
     >
-      <scroll-link href="#hero" class="logo active"><Logo symbol /></scroll-link>
+      <scroll-link href="#hero" class="logo"><Logo symbol /></scroll-link>
       <scroll-link href="#concerts">Concerts</scroll-link>
       <scroll-link href="#music">Music</scroll-link>
       <scroll-link href="#videos">Videos</scroll-link>
