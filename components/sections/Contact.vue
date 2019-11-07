@@ -1,13 +1,8 @@
 <template>
   <section id="contact" class="contact">
     <h2 class="section-title">Contact</h2>
-    <p>We love hearing from you! Send fanmail to:</p>
-    <p class="address" :style="{ background: globals.colors.backgroundColor1.hex }">
-      Marcus&amp;Martinus<br />
-      c/o Anti Brandpeople<br />
-      Sofienberggata 17<br />
-      0558 Oslo, Norway
-    </p>
+    <p>{{ contact.lead }}</p>
+    <div v-html="contact.address.content" class="address" :style="{ background: globals.colors.backgroundColor1.hex }"></div>
     <p>For other inquiries, please <nuxt-link to="/contact">contact our team</nuxt-link>.</p>
   </section>
 </template>
@@ -17,6 +12,17 @@ import gql from 'graphql-tag'
 
 export default {
   apollo: {
+    contact: gql`
+    query {
+      contact: entry(title: "Contact") {
+        ... on Contact {
+          lead
+          address {
+            content
+          }
+        }
+      }
+    }`,
     globals: gql`
     query {
       globals {

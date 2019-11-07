@@ -195,6 +195,18 @@ section {
     padding: 0 1rem 0 10%;
   }
 
+  ul {
+    font-weight: 800;
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+    max-width: 30rem;
+
+    a {
+      font-weight: 800;
+    }
+  }
+
   @media (max-width: $media-s) {
     width: 100%;
     margin-bottom: 3rem;
@@ -208,4 +220,9 @@ section {
 
 .hero .more p {
   margin: 0;
+}
+
+.address p {
+  margin: 0;
+  max-width: none;
 }

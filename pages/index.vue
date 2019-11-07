@@ -1,12 +1,14 @@
 <template>
   <main class="site-main">
     <Hero />
-    <Shop class="fade-section" />
-    <Music class="fade-section" />
-    <Videos class="fade-section" />
-    <Concerts class="fade-section" />
-    <About class="fade-section" />
-    <Contact class="fade-section" />
+    <div v-for="(section, index) in globals.frontPageSections.frontPageSections" :key="index">
+      <Shop v-if="section.title === 'MMStore'" class="fade-section" />
+      <Music v-else-if="section.title === 'Music'" class="fade-section" />
+      <Videos v-else-if="section.title === 'Videos'" class="fade-section" />
+      <Concerts v-else-if="section.title === 'Concerts'" class="fade-section" />
+      <About v-else-if="section.title === 'About'" class="fade-section" />
+      <Contact v-else-if="section.title === 'Contact'" class="fade-section" />
+    </div>
   </main>
 </template>
 
@@ -43,16 +45,18 @@ export default {
       ]
     }
   },
-  /*apollo: {
+  apollo: {
     globals: gql`
     query {
       globals {
         frontPageSections {
-          frontPageSections
+          frontPageSections {
+            title
+          }
         }
       }
     }`
-  }*/
+  }
 }
 </script>
 
