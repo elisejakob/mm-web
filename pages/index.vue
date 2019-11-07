@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import Hero from '~/components/sections/Hero.vue'
 import Concerts from '~/components/sections/Concerts.vue'
 import Music from '~/components/sections/Music.vue'
@@ -41,7 +42,17 @@ export default {
         }
       ]
     }
-  }
+  },
+  /*apollo: {
+    globals: gql`
+    query {
+      globals {
+        frontPageSections {
+          frontPageSections
+        }
+      }
+    }`
+  }*/
 }
 </script>
 

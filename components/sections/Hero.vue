@@ -10,24 +10,22 @@
         </div>
       </template>
       <template v-else>
-        <img :src="home.mainImage[0].url" alt="The latest MM release" />
+        <img :src="home.mainImage[0].fullWidth" alt="The latest MM release" />
       </template>
       <div class="column">
         <Logo />
       </div>
     </div>
-    <div class="hero-label" id="hero-more">
-      <ShinyText class="before" text="New merch" :style="{ color: globals.colors.backgroundColor2.hex }" />
+    <div v-for="(label, index) in home.topLabel" :key="index" class="hero-label" id="hero-more">
+      <ShinyText class="before" :text="label.shinyText" :style="{ color: globals.colors.backgroundColor2.hex }" />
       <div class="hero-text">
-        <h2 class="section-title">Soon</h2>
+        <h2 class="section-title">{{ label.heading }}</h2>
         <div class="info">
-          Check out our newest EP!
+          {{ label.smallText }}
           <div class="read-more" @click="readMore('hero-more')">Listen</div>
         </div>
       </div>
-      <p class="more" :style="{ background: globals.colors.backgroundColor1.hex }">
-        On <a href="https://open.spotify.com/artist/3N4FiTxpPQRsrihmTMN349?si=N-WI45P2S1CgQLkwgk7R5A" target="_blank">Spotify</a>, <a href="https://music.apple.com/us/artist/marcus-martinus/551127180" target="_blank">Apple Music</a>, <a href="https://www.deezer.com/us/artist/3697701" target="_blank">Deezer</a>, <a href="https://tidal.com/browse/artist/4691379" target="_blank">Tidal</a>
-      </p>
+      <div class="more" v-html="label.links.content" :style="{ background: globals.colors.backgroundColor1.hex }"></div>
     </div>
   </section>
 </template>
@@ -49,9 +47,19 @@ export default {
       home: entry(title: "Home") {
         ... on Home {
           mainImage {
-            url
+            fullWidth: url(transform: fullWidth)
           }
           youtube
+          topLabel {
+            ... on TopLabelTopLabel {
+              shinyText
+              heading
+              smallText
+              links {
+                content
+              }
+            }
+          }
         }
       }
     }`,

@@ -1,7 +1,7 @@
 <template>
   <section id="about" class="about">
     <h2 class="section-title">Our story</h2>
-    <img :src="about.mainImage[0].url" class="section-image" alt="The boys in action" />
+    <img :src="about.mainImage[0].fullWidth" class="section-image" alt="The boys in action" />
     <p class="lead">Marcus&amp;Martinus is the biggest pop phenomenon coming from Scandinavia in years. Their EP <em>SOON</em> is out now – representing the phase of being on their way forward and growing up together with their fans.</p>
     <p>By the age of 17, the twins from Norway are already established as successful artists in large parts of Europe. Their catchy pop music and magnetic stage presence is impossible not to like, which their ever growing fan base of MMers all over the world agrees on!</p>
     <div class="both" id="both">
@@ -21,7 +21,7 @@
     
     <div class="split">
       <div class="half" id="marcus">
-        <img :src="about.marcusPortrait[0].url" alt="Marcus looking cute" />
+        <img :src="about.marcusPortrait[0].fullWidth" alt="Marcus looking cute" />
         <div class="m-info">
           <h3 class="name">Marcus</h3>
           <div class="read-more" @click="readMore('marcus')">Facts about Marcus</div>
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="half" id="martinus">
-        <img :src="about.martinusPortrait[0].url" alt="Martinus looking cute" />
+        <img :src="about.martinusPortrait[0].fullWidth" alt="Martinus looking cute" />
         <div class="m-info">
           <h3 class="name">Martinus</h3>
           <div class="read-more" @click="readMore('martinus')">Facts about Martinus</div>
@@ -79,13 +79,13 @@ export default {
       about: entry(title: "About") {
         ... on About {
           mainImage {
-            url
+            fullWidth: url(transform: fullWidth)
           }
           marcusPortrait {
-            url
+            fullWidth: url(transform: fullWidth)
           }
           martinusPortrait {
-            url
+            fullWidth: url(transform: fullWidth)
           }
         }
       }
