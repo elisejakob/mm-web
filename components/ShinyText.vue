@@ -29,10 +29,10 @@
     color: $color-white; 
   }
   30% {
-    color: $color-theme-light-2;
+    color: gold;
   }
   100% {
-    color: $color-theme-light-2;
+    color: gold;
   }
 }
 </style>

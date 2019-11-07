@@ -192,7 +192,7 @@ export default {
   }
 
   &:hover {
-    color: $color-theme-light;
+    opacity: .6;
   }
 }
 
@@ -216,15 +216,13 @@ export default {
     margin-bottom: 1rem;
     border-bottom: 2px solid $color-white;
     &:hover {
-      color: $color-theme-light;
-      border-color: $color-theme-light;
+      opacity: .6;
     }
   }
 
   &.visible {
     .read-more {
-      color: $color-theme-light;
-      border-color: $color-theme-light;
+      opacity: .6;
     }
   }
 }

@@ -29,11 +29,6 @@ export default {
 
 .logo {
   width: 100%;
-  &.symbol:hover {
-    path {
-      fill: $color-theme-light;
-    }
-  }
 }
 path {
   fill: $color-white;

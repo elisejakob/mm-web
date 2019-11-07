@@ -8,9 +8,10 @@
           <div class="date">{{ $moment.unix(concert.date).format('MMMM D') }}</div>
           <div class="location">
             <span class="city">{{ concert.city }}, {{ concert.country }}</span>
-            <span class="venue">{{ concert.venue }}</span>
+            <span v-if="concert.venue" class="venue">{{ concert.venue }}</span>
+            <span v-if="concert.small" class="small">Live performance</span>
           </div>
-          <a :href="concert.ticketUrl" target="_blank" class="button tickets" @mouseover="$store.dispatch('showGif', { image: '/gifs/small/thumbsup.gif', duration: null})" @mouseleave="$store.commit('hideGif')">Get tickets</a>
+          <a v-if="concert.ticketUrl" :href="concert.ticketUrl" target="_blank" class="button tickets" :style="{ background: globals.colors.backgroundColor2.hex, borderColor: globals.colors.backgroundColor2.hex }" @mouseover="$store.dispatch('showGif', { image: '/gifs/small/thumbsup.gif', duration: null})" @mouseleave="$store.commit('hideGif')">Get tickets</a>
         </li>
       </ul>
       <div v-else class="no-concerts">
@@ -62,6 +63,20 @@ export default {
           country
           venue
           ticketUrl
+          small
+        }
+      }
+    }`,
+    globals: gql`
+    query {
+      globals {
+        colors {
+          backgroundColor1 {
+            hex
+          }
+          backgroundColor2 {
+            hex
+          }
         }
       }
     }`
@@ -97,7 +112,7 @@ export default {
 
     &-item {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
       background: $color-white;
       color: $color-black;
@@ -107,6 +122,10 @@ export default {
       }
     }
 
+    .location {
+      text-align: left;
+    }
+
     .city {
       font-weight: 800;
     }
@@ -114,6 +133,11 @@ export default {
     .city:after {
       content: " / ";
       font-weight: 400;
+    }
+
+    .small {
+      text-transform: none;
+      font-style: italic;
     }
 
     div, a {
@@ -126,11 +150,12 @@ export default {
       font-weight: 800;
       line-height: inherit;
       width: auto;
+      display: block;
+      margin: 0 0 0 auto;
 
       &:hover {
         color: inherit;
-        background: $color-theme-light-2;
-        border-color: $color-theme-light-2;
+        opacity: .6;
       }
     }
   }
@@ -164,7 +189,7 @@ export default {
       }
 
       .date {
-        width: 4rem;
+        width: 7rem;
         text-align: left;
       }
 

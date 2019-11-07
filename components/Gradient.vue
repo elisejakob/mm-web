@@ -1,26 +1,29 @@
 <template>
-  <div class="gradient">
+  <div class="gradient" :style="{ background: 'linear-gradient(90deg,' + globals.colors.backgroundColor1.hex + ',' + globals.colors.backgroundColor2.hex + ')'}">
   </div>
 </template>
 
 <script>
+import gql from 'graphql-tag'
 export default {
   props: {
     scrolled: Number
     // percent value for how far down the site the user has scrolled
   },
-  data: function() {
-    return {
-      night: true
-    }
-  },
-  beforeMount: function() {
-    var now = new Date();
-    var time = now.getUTCHours() + 2;
-    if (time > 6 && time < 18) {
-      this.night = false;
-      document.body.classList.add('day');
-    }
+  apollo: {
+    globals: gql`
+    query {
+      globals {
+        colors {
+          backgroundColor1 {
+            hex
+          }
+          backgroundColor2 {
+            hex
+          }
+        }
+      }
+    }`
   }
 }
 </script>

@@ -71,7 +71,7 @@ a.index {
     letter-spacing: 0.05em;
 
     &:hover {
-      color: $color-theme-light;
+      opacity: .5;
     }
 
     &.credit {

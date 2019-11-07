@@ -70,7 +70,7 @@ export default {
     letter-spacing: 0.05em;
 
     &:hover, &.active, &:focus {
-      color: $color-theme-light;
+      opacity: .6;
     }
 
     &:focus {

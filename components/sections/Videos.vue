@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <a href="https://www.youtube.com/channel/UCRUmSbfoolI9b8iRyrGqFUw" class="button shiny" target="_blank">&rarr; Youtube</a>
+    <a href="https://www.youtube.com/channel/UCRUmSbfoolI9b8iRyrGqFUw" class="button glowy" target="_blank">&rarr; Youtube</a>
   </section>
 </template>
 

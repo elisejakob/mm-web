@@ -86,10 +86,10 @@ export default {
 
   &:hover {
     img {
-      box-shadow: 0 0 0.5rem $color-theme-light-2;
+      box-shadow: 0 0 0.5rem $color-white;
     }
     h3, .details, .price {
-      color: $color-theme-light;
+      color: $color-white;
     }
   }
 }

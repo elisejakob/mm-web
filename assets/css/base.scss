@@ -92,37 +92,20 @@ button, .button {
     background: transparent;
     cursor: pointer;
   }
-
-  &.shiny {
-    color: $color-white;
-    border-color: $color-white;
-    background: transparent;
-    text-shadow: 0 0 0.4em $color-theme-light;
-    box-shadow: 
-      inset 0 0 0.4em $color-theme-light,
-      0 0 0.4em $color-theme-light;
-    
-    &:hover {
-      text-shadow: 0 0 0.4em $color-theme-light-2;
-      box-shadow: 
-        inset 0 0 0.4em $color-theme-light-2,
-        0 0 0.4em $color-theme-light-2;
-    }
-  }
   &.glowy {
     color: $color-white;
     border-color: $color-white;
     background: transparent;
-    text-shadow: 0 0 0.4em $color-theme-light-2;
+    text-shadow: 0 0 0.4em $color-white;
     box-shadow:
-      inset 0 0 0.4em $color-theme-light-2,
-      0 0 0.4em $color-theme-light-2;
+      inset 0 0 0.4em $color-white,
+      0 0 0.4em $color-white;
     
     &:hover {
-      text-shadow: 0 0 0.4em $color-theme-light;
+      text-shadow: 0 0 0.4em gold;
       box-shadow: 
-        inset 0 0 0.4em $color-theme-light,
-        0 0 0.4em $color-theme-light;
+        inset 0 0 0.4em gold,
+        0 0 0.4em gold;
     }
   }
 

@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="hero-label" id="hero-more">
-      <ShinyText class="before" text="New merch" />
+      <ShinyText class="before" text="New merch" :style="{ color: globals.colors.backgroundColor2.hex }" />
       <div class="hero-text">
         <h2 class="section-title">Soon</h2>
         <div class="info">
@@ -25,7 +25,7 @@
           <div class="read-more" @click="readMore('hero-more')">Listen</div>
         </div>
       </div>
-      <p class="more">
+      <p class="more" :style="{ background: globals.colors.backgroundColor1.hex }">
         On <a href="https://open.spotify.com/artist/3N4FiTxpPQRsrihmTMN349?si=N-WI45P2S1CgQLkwgk7R5A" target="_blank">Spotify</a>, <a href="https://music.apple.com/us/artist/marcus-martinus/551127180" target="_blank">Apple Music</a>, <a href="https://www.deezer.com/us/artist/3697701" target="_blank">Deezer</a>, <a href="https://tidal.com/browse/artist/4691379" target="_blank">Tidal</a>
       </p>
     </div>
@@ -52,6 +52,19 @@ export default {
             url
           }
           youtube
+        }
+      }
+    }`,
+    globals: gql`
+    query {
+      globals {
+        colors {
+          backgroundColor1 {
+            hex
+          }
+          backgroundColor2 {
+            hex
+          }
         }
       }
     }`
@@ -188,7 +201,7 @@ export default {
   }
 
   &:hover {
-    color: $color-theme-light;
+    opacity: .6;
   }
 }
 .more {

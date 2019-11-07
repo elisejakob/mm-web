@@ -60,10 +60,6 @@ export default {
     width: 3rem;
     margin: 0 auto;
   }
-
-  &:hover {
-    color: $color-theme-light;
-  }
 }
 .footer-nav {
   display: flex;
@@ -77,10 +73,6 @@ export default {
     font-weight: 700;
     font-style: italic;
     letter-spacing: 0.05em;
-
-    &:hover {
-      color: $color-theme-light;
-    }
 
     &.credit {
       margin-left: auto;

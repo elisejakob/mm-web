@@ -8,7 +8,7 @@
             <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="😀👉 your email here 👈😀" required>
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b235f3e506510c4ec7a395eab_dff36f35cf" tabindex="-1" value=""></div>
-            <input type="submit" value="Sign up to our newsletter" name="subscribe" id="mc-embedded-subscribe" class="button gradient">
+            <input type="submit" value="Sign up to our newsletter" name="subscribe" id="mc-embedded-subscribe" class="button gradient" :style="{ background: 'linear-gradient(90deg,' + globals.colors.backgroundColor2.hex + ',' + globals.colors.backgroundColor1.hex + ')'}">
           </div>
       </form>
       <p class="privacy-info">
@@ -21,10 +21,26 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 export default {
   name: 'Newsletter',
   props: {
     heading: String
+  },
+  apollo: {
+    globals: gql`
+    query {
+      globals {
+        colors {
+          backgroundColor1 {
+            hex
+          }
+          backgroundColor2 {
+            hex
+          }
+        }
+      }
+    }`
   }
 }
 </script>
@@ -62,7 +78,7 @@ export default {
     margin-bottom: 0.5rem;
     border-radius: 0;
     &:focus, &:hover, &:active {
-      border: 2px solid $color-theme-light;
+      border: 2px solid gold;
     }
   }
 

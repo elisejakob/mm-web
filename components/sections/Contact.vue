@@ -2,7 +2,7 @@
   <section id="contact" class="contact">
     <h2 class="section-title">Contact</h2>
     <p>We love hearing from you! Send fanmail to:</p>
-    <p class="address">
+    <p class="address" :style="{ background: globals.colors.backgroundColor1.hex }">
       Marcus&amp;Martinus<br />
       c/o Anti Brandpeople<br />
       Sofienberggata 17<br />
@@ -11,6 +11,28 @@
     <p>For other inquiries, please <nuxt-link to="/contact">contact our team</nuxt-link>.</p>
   </section>
 </template>
+
+<script>
+import gql from 'graphql-tag'
+
+export default {
+  apollo: {
+    globals: gql`
+    query {
+      globals {
+        colors {
+          backgroundColor1 {
+            hex
+          }
+          backgroundColor2 {
+            hex
+          }
+        }
+      }
+    }`
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/variables.scss';
