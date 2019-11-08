@@ -8,7 +8,7 @@
       To top
     </scroll-link>
     <nav class="footer-nav">
-      <nuxt-link to="/cookies">Cookies</nuxt-link>
+      <a href="/cookies/">Cookies</a>
       <a href="https://jakobsenfrukt.no" target="_blank" class="credit">Website by JF&amp;G 🍍</a>
     </nav>
   </footer>

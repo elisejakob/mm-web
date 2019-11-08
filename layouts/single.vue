@@ -1,7 +1,7 @@
 <template>
   <div id="top">
     <Gradient />
-    <nuxt-link to="/" class="index">&#11013; &nbsp;Return to front page</nuxt-link>
+    <a href="/" class="index">&#11013; &nbsp;Return to front page</a>
     <nuxt />
     <Footer />
   </div>

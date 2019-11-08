@@ -3,7 +3,7 @@
     <h2 class="section-title">Contact</h2>
     <p>{{ contact.lead }}</p>
     <div v-html="contact.address.content" class="address" :style="{ background: globals.colors.backgroundColor1.hex }"></div>
-    <p>For other inquiries, please <nuxt-link to="/contact">contact our team</nuxt-link>.</p>
+    <p>For other inquiries, please <a href="/contact/">contact our team</a>.</p>
   </section>
 </template>
 
